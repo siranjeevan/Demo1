@@ -4,7 +4,7 @@ import logoImage from '../assets/Logo Section.png';
 
 const Footer = () => {
   return (
-    <footer className="border-t" style={{ backgroundColor: '#1F3A34', borderColor: 'rgba(31, 58, 52, 0.2)', color: '#F4F8F9' }}>
+    <footer className="border-t" style={{ backgroundColor: '#014e63', borderColor: 'rgba(1, 78, 99, 0.2)', color: '#F4F8F9' }}>
       <div className="container-max section-padding">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Section */}
@@ -175,7 +175,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center" style={{ borderColor: 'rgba(31, 58, 52, 0.2)' }}>
+        <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center" style={{ borderColor: 'rgba(1, 78, 99, 0.2)' }}>
           <p className="text-sm" style={{ color: 'rgba(244, 248, 249, 0.7)' }}>
             © 2026 Dhwayam Foundation. All rights reserved.
           </p>

@@ -46,17 +46,17 @@ const Booking = () => {
       >
         <div className="container-max section-padding text-center">
           <AnimatedSection>
-            <CheckCircle style={{ color: '#1F3A34' }} className="mx-auto mb-6" size={64} />
-            <h1 className="text-4xl font-serif font-bold mb-4" style={{ color: '#1F3A34' }}>
+            <CheckCircle style={{ color: '#014e63' }} className="mx-auto mb-6" size={64} />
+            <h1 className="text-4xl font-serif font-bold mb-4" style={{ color: '#014e63' }}>
               Thank You for Your <span className="gradient-text">Inquiry!</span>
             </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
               We've received your booking request and will get back to you within 24 hours. 
               We're excited about the possibility of creating impact together through music.
             </p>
-            <div className="rounded-xl p-6 max-w-md mx-auto shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
-              <p className="font-semibold mb-2" style={{ color: '#1F3A34' }}>What's Next?</p>
-              <p className="text-sm" style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
+            <div className="rounded-xl p-6 max-w-md mx-auto shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+              <p className="font-semibold mb-2" style={{ color: '#014e63' }}>What's Next?</p>
+              <p className="text-sm" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
                 Our team will review your request and contact you to discuss details, 
                 availability, and how we can make your event impactful.
               </p>
@@ -75,7 +75,7 @@ const Booking = () => {
       className="pt-20"
     >
       {/* Hero Section */}
-      <section className="section-padding" style={{ background: 'linear-gradient(to bottom right, #1F3A34, rgba(31, 58, 52, 0.9), rgba(31, 58, 52, 0.8))', color: '#F4F8F9' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(to bottom right, #014e63, rgba(1, 78, 99, 0.9), rgba(1, 78, 99, 0.8))', color: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -92,19 +92,19 @@ const Booking = () => {
       </section>
 
       {/* Important Message */}
-      <section className="section-padding" style={{ backgroundColor: '#1F3A34' }}>
+      <section className="section-padding" style={{ backgroundColor: '#014e63' }}>
         <div className="container-max">
           <AnimatedSection>
-            <div className="rounded-xl p-8 text-center shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
-              <Heart style={{ color: '#1F3A34' }} className="mx-auto mb-4" size={48} />
-              <h2 className="text-2xl font-serif font-bold mb-4" style={{ color: '#1F3A34' }}>
+            <div className="rounded-xl p-8 text-center shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+              <Heart style={{ color: '#014e63' }} className="mx-auto mb-4" size={48} />
+              <h2 className="text-2xl font-serif font-bold mb-4" style={{ color: '#014e63' }}>
                 Our Commitment to Impact
               </h2>
-              <p className="text-xl mb-4" style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+              <p className="text-xl mb-4" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
                 Any remuneration received from performances will be donated to a charity 
                 supporting youth welfare.
               </p>
-              <p style={{ color: 'rgba(31, 58, 52, 0.7)' }}>
+              <p style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
                 When you book Dhwayam, you're not just getting exceptional music – you're 
                 directly contributing to positive change in young people's lives.
               </p>
@@ -119,8 +119,8 @@ const Booking = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
             <AnimatedSection>
-              <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
-                <h2 className="text-3xl font-serif font-bold mb-6" style={{ color: '#1F3A34' }}>
+              <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+                <h2 className="text-3xl font-serif font-bold mb-6" style={{ color: '#014e63' }}>
                   Event <span className="gradient-text">Details</span>
                 </h2>
                 
@@ -128,7 +128,7 @@ const Booking = () => {
                   {/* Contact Information */}
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Full Name *
                       </label>
                       <input
@@ -140,16 +140,16 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Email Address *
                       </label>
                       <input
@@ -161,11 +161,11 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -173,7 +173,7 @@ const Booking = () => {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Phone Number
                       </label>
                       <input
@@ -184,16 +184,16 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                         placeholder="(555) 123-4567"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Organization
                       </label>
                       <input
@@ -204,11 +204,11 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                         placeholder="Organization or company name"
                       />
                     </div>
@@ -216,7 +216,7 @@ const Booking = () => {
 
                   {/* Event Information */}
                   <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                    <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                       Event Type *
                     </label>
                     <select
@@ -227,11 +227,11 @@ const Booking = () => {
                       className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                       style={{ 
                         backgroundColor: '#F4F8F9', 
-                        borderColor: 'rgba(31, 58, 52, 0.3)', 
-                        color: '#1F3A34'
+                        borderColor: 'rgba(1, 78, 99, 0.3)', 
+                        color: '#014e63'
                       }}
-                      onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                      onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                      onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                     >
                       <option value="">Select event type</option>
                       <option value="fundraising">Fundraising Concert</option>
@@ -246,7 +246,7 @@ const Booking = () => {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Event Date *
                       </label>
                       <input
@@ -258,15 +258,15 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Event Time
                       </label>
                       <input
@@ -277,17 +277,17 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                    <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                       Event Location *
                     </label>
                     <input
@@ -299,18 +299,18 @@ const Booking = () => {
                       className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                       style={{ 
                         backgroundColor: '#F4F8F9', 
-                        borderColor: 'rgba(31, 58, 52, 0.3)', 
-                        color: '#1F3A34'
+                        borderColor: 'rgba(1, 78, 99, 0.3)', 
+                        color: '#014e63'
                       }}
-                      onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                      onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                      onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                       placeholder="Venue name and address"
                     />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Expected Attendees
                       </label>
                       <input
@@ -321,16 +321,16 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                         placeholder="Approximate number"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                         Budget Range
                       </label>
                       <select
@@ -340,11 +340,11 @@ const Booking = () => {
                         className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                         style={{ 
                           backgroundColor: '#F4F8F9', 
-                          borderColor: 'rgba(31, 58, 52, 0.3)', 
-                          color: '#1F3A34'
+                          borderColor: 'rgba(1, 78, 99, 0.3)', 
+                          color: '#014e63'
                         }}
-                        onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                        onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                        onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                        onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                       >
                         <option value="">Select budget range</option>
                         <option value="under-1000">Under $1,000</option>
@@ -358,7 +358,7 @@ const Booking = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                    <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                       Event Description *
                     </label>
                     <textarea
@@ -370,17 +370,17 @@ const Booking = () => {
                       className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none resize-vertical"
                       style={{ 
                         backgroundColor: '#F4F8F9', 
-                        borderColor: 'rgba(31, 58, 52, 0.3)', 
-                        color: '#1F3A34'
+                        borderColor: 'rgba(1, 78, 99, 0.3)', 
+                        color: '#014e63'
                       }}
-                      onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                      onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                      onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                       placeholder="Tell us about your event, its purpose, and what you hope to achieve..."
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                    <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                       Special Requirements
                     </label>
                     <textarea
@@ -391,17 +391,17 @@ const Booking = () => {
                       className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none resize-vertical"
                       style={{ 
                         backgroundColor: '#F4F8F9', 
-                        borderColor: 'rgba(31, 58, 52, 0.3)', 
-                        color: '#1F3A34'
+                        borderColor: 'rgba(1, 78, 99, 0.3)', 
+                        color: '#014e63'
                       }}
-                      onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                      onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                      onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                       placeholder="Sound equipment, stage setup, accessibility needs, etc."
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#1F3A34' }}>
+                    <label className="block text-sm font-semibold mb-2" style={{ color: '#014e63' }}>
                       How did you hear about us?
                     </label>
                     <select
@@ -411,11 +411,11 @@ const Booking = () => {
                       className="w-full border rounded-lg px-4 py-3 transition-colors focus:outline-none"
                       style={{ 
                         backgroundColor: '#F4F8F9', 
-                        borderColor: 'rgba(31, 58, 52, 0.3)', 
-                        color: '#1F3A34'
+                        borderColor: 'rgba(1, 78, 99, 0.3)', 
+                        color: '#014e63'
                       }}
-                      onFocus={(e) => e.target.style.borderColor = '#1F3A34'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(31, 58, 52, 0.3)'}
+                      onFocus={(e) => e.target.style.borderColor = '#014e63'}
+                      onBlur={(e) => e.target.style.borderColor = 'rgba(1, 78, 99, 0.3)'}
                     >
                       <option value="">Select an option</option>
                       <option value="website">Website</option>
@@ -430,9 +430,9 @@ const Booking = () => {
                   <button
                     type="submit"
                     className="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
-                    style={{ backgroundColor: '#1F3A34', color: '#F4F8F9' }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(31, 58, 52, 0.9)'}
-                    onMouseLeave={(e) => e.target.style.backgroundColor = '#1F3A34'}
+                    style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#014e63'}
                   >
                     <Send className="mr-2" size={20} />
                     Submit Booking Request
@@ -445,82 +445,82 @@ const Booking = () => {
             <AnimatedSection delay={0.3}>
               <div className="space-y-8">
                 {/* Contact Information */}
-                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
-                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#1F3A34' }}>
+                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#014e63' }}>
                     Contact Information
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center">
-                      <Mail style={{ color: '#1F3A34' }} className="mr-3" size={20} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>dhwayamfoundation@gmail.com</span>
+                      <Mail style={{ color: '#014e63' }} className="mr-3" size={20} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>dhwayamfoundation@gmail.com</span>
                     </div>
                     <div className="flex items-center">
-                      <Phone style={{ color: '#1F3A34' }} className="mr-3" size={20} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Available upon request</span>
+                      <Phone style={{ color: '#014e63' }} className="mr-3" size={20} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Available upon request</span>
                     </div>
                   </div>
                 </div>
 
                 {/* What We Offer */}
-                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
-                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#1F3A34' }}>
+                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#014e63' }}>
                     What We Offer
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
-                      <CheckCircle style={{ color: '#1F3A34' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Live Carnatic fusion performances</span>
+                      <CheckCircle style={{ color: '#014e63' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Live Carnatic fusion performances</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle style={{ color: '#1F3A34' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Customizable setlists for your event</span>
+                      <CheckCircle style={{ color: '#014e63' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Customizable setlists for your event</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle style={{ color: '#1F3A34' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Professional sound equipment coordination</span>
+                      <CheckCircle style={{ color: '#014e63' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Professional sound equipment coordination</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle style={{ color: '#1F3A34' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Cultural education and storytelling</span>
+                      <CheckCircle style={{ color: '#014e63' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Cultural education and storytelling</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle style={{ color: '#1F3A34' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Social impact integration</span>
+                      <CheckCircle style={{ color: '#014e63' }} className="mr-3 mt-1 flex-shrink-0" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Social impact integration</span>
                     </li>
                   </ul>
                 </div>
 
                 {/* Event Types */}
-                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
-                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#1F3A34' }}>
+                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#014e63' }}>
                     Event Types We Support
                   </h3>
                   <div className="space-y-2">
                     <div className="flex items-center">
-                      <Heart style={{ color: '#1F3A34' }} className="mr-3" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Fundraising concerts</span>
+                      <Heart style={{ color: '#014e63' }} className="mr-3" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Fundraising concerts</span>
                     </div>
                     <div className="flex items-center">
-                      <Users style={{ color: '#1F3A34' }} className="mr-3" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Community outreach events</span>
+                      <Users style={{ color: '#014e63' }} className="mr-3" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Community outreach events</span>
                     </div>
                     <div className="flex items-center">
-                      <Calendar style={{ color: '#1F3A34' }} className="mr-3" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Cultural festivals</span>
+                      <Calendar style={{ color: '#014e63' }} className="mr-3" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Cultural festivals</span>
                     </div>
                     <div className="flex items-center">
-                      <MapPin style={{ color: '#1F3A34' }} className="mr-3" size={16} />
-                      <span style={{ color: 'rgba(31, 58, 52, 0.8)' }}>Corporate events</span>
+                      <MapPin style={{ color: '#014e63' }} className="mr-3" size={16} />
+                      <span style={{ color: 'rgba(1, 78, 99, 0.8)' }}>Corporate events</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Response Time */}
-                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(31, 58, 52, 0.2)' }}>
-                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#1F3A34' }}>
+                <div className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+                  <h3 className="text-xl font-serif font-semibold mb-4" style={{ color: '#014e63' }}>
                     Response Time
                   </h3>
-                  <p style={{ color: 'rgba(31, 58, 52, 0.8)' }}>
+                  <p style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
                     We typically respond to booking inquiries within 24 hours. For urgent 
                     requests, please mention it in your event description.
                   </p>

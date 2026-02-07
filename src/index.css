@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,95 +6,138 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 15px; /* Slightly reduced base font size */
   }
-  
+
   body {
-    background-color: #F4F8F9;
-    color: #1F3A34;
-    font-family: 'Inter', sans-serif;
+    background-color: #f4f8f9;
+    color: #014e63;
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Reduce small text sizes globally */
+  .text-xs {
+    font-size: 0.65rem !important; /* Reduced from 0.75rem */
+    line-height: 1rem;
+  }
+
+  .text-sm {
+    font-size: 0.8rem !important; /* Reduced from 0.875rem */
+    line-height: 1.15rem;
   }
 }
 
 @layer components {
   .btn-primary {
-    background-color: #1F3A34;
-    color: #F4F8F9;
+    background-color: #014e63;
+    color: #f4f8f9;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
     transform: scale(1);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
-  
+
   .btn-primary:hover {
-    background-color: rgba(31, 58, 52, 0.9);
+    background-color: rgba(1, 78, 99, 0.9);
     transform: scale(1.05);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
-  
+
   .btn-secondary {
-    border: 2px solid #1F3A34;
-    color: #1F3A34;
+    border: 2px solid #014e63;
+    color: #014e63;
     background-color: transparent;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
-  
+
   .btn-secondary:hover {
-    background-color: #1F3A34;
-    color: #F4F8F9;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background-color: #014e63;
+    color: #f4f8f9;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
-  
+
   .section-padding {
     padding: 4rem 1rem;
   }
-  
+
   @media (min-width: 640px) {
     .section-padding {
       padding: 4rem 1.5rem;
     }
   }
-  
+
   @media (min-width: 1024px) {
     .section-padding {
       padding: 4rem 2rem;
     }
   }
-  
+
   .container-max {
     max-width: 80rem;
     margin: 0 auto;
   }
-  
+
   .gradient-text {
-    background: linear-gradient(to right, #1F3A34, rgba(31, 58, 52, 0.7));
+    background: linear-gradient(to right, #014e63, rgba(1, 78, 99, 0.7));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
-  
+
   .card-hover {
     transition: all 0.3s ease;
   }
-  
+
   .card-hover:hover {
     transform: scale(1.05);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
-  
+
   .bg-dark {
-    background-color: #1F3A34;
-    color: #F4F8F9;
+    background-color: #014e63;
+    color: #f4f8f9;
   }
-  
+
   .bg-light {
-    background-color: #F4F8F9;
-    color: #1F3A34;
+    background-color: #f4f8f9;
+    color: #014e63;
+  }
+}
+
+/* Shimmer animation for brand text */
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Glow effect for brand elements */
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(8, 145, 178, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(8, 145, 178, 0.5));
   }
 }
