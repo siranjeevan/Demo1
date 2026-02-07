@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Users, ArrowRight, Calendar, MapPin, Target, DollarSign, Share2, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Heart, Users, ArrowRight, Calendar, MapPin, Target, DollarSign, Share2, Instagram } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import CountUp from '../components/CountUp';
 
@@ -293,7 +293,7 @@ const Initiatives = () => {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <AnimatedSection delay={0.2}>
               <div className="rounded-xl p-8 text-center card-hover shadow-lg border h-full" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
                 <Heart style={{ color: '#014e63' }} className="mx-auto mb-4" size={48} />
@@ -315,26 +315,6 @@ const Initiatives = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <div className="rounded-xl p-8 text-center card-hover shadow-lg border h-full" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-                <Users style={{ color: '#014e63' }} className="mx-auto mb-4" size={48} />
-                <h3 className="text-xl font-semibold mb-4" style={{ color: '#014e63' }}>Partner With Us</h3>
-                <p className="mb-6" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                  Organizations and venues can partner with us to bring music and 
-                  impact to their communities.
-                </p>
-                <a 
-                  href="/contact" 
-                  className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
-                  style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
-                  onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
-                  onMouseLeave={(e) => e.target.style.backgroundColor = '#014e63'}
-                >
-                  Contact Us <ArrowRight className="ml-2" size={16} />
-                </a>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.4}>
               <div className="rounded-xl p-8 text-center card-hover shadow-lg border h-full" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
                 <Calendar style={{ color: '#014e63' }} className="mx-auto mb-4" size={48} />
                 <h3 className="text-xl font-semibold mb-4" style={{ color: '#014e63' }}>Contact Us</h3>
@@ -360,35 +340,17 @@ const Initiatives = () => {
                 <p className="mb-6" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
                   Stay connected with our journey and latest updates on social media.
                 </p>
-                <div className="flex justify-center gap-4">
-                  <a 
-                    href="https://instagram.com" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-                    style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
-                  >
-                    <Instagram size={20} />
-                  </a>
-                  <a 
-                    href="https://youtube.com" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-                    style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
-                  >
-                    <Youtube size={20} />
-                  </a>
-                  <a 
-                    href="https://facebook.com" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-                    style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
-                  >
-                    <Facebook size={20} />
-                  </a>
-                </div>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
+                  style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#014e63'}
+                >
+                  Instagram <Instagram className="ml-2" size={16} />
+                </a>
               </div>
             </AnimatedSection>
           </div>

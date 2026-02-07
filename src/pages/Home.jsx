@@ -18,7 +18,7 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Images */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom right, rgba(1, 78, 99, 0.9), rgba(1, 78, 99, 0.8), rgba(1, 78, 99, 0.7))' }}></div>
+          <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom right, rgba(1, 78, 99, 0.7), rgba(1, 78, 99, 0.6), rgba(1, 78, 99, 0.5))' }}></div>
           <img
             src={heroImage1}
             alt="Dhwayam Performance"
