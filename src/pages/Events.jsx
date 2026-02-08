@@ -344,7 +344,7 @@ const Events = () => {
         <div className="container-max text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Want to Book Dhwayam for Your Event?
+              Get in Touch with Dhwayam
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
               Bring the power of music and social impact to your next event. All performance 
@@ -352,28 +352,13 @@ const Events = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="/booking" 
+                href="/contact" 
                 className="font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg"
                 style={{ backgroundColor: '#F4F8F9', color: '#014e63' }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(244, 248, 249, 0.9)'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#F4F8F9'}
               >
-                Book Us Now <ArrowRight className="ml-2" size={20} />
-              </a>
-              <a 
-                href="/contact" 
-                className="border-2 font-semibold py-3 px-8 rounded-lg transition-all duration-300 inline-flex items-center justify-center"
-                style={{ borderColor: '#F4F8F9', color: '#F4F8F9', backgroundColor: 'transparent' }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#F4F8F9';
-                  e.target.style.color = '#014e63';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.color = '#F4F8F9';
-                }}
-              >
-                Contact Us <Users className="ml-2" size={20} />
+                Contact Us <ArrowRight className="ml-2" size={20} />
               </a>
             </div>
           </AnimatedSection>

@@ -1,4 +1,5 @@
 #!/bin/bash
+#./deploy.sh
 
 # Build the project
 echo "Building the project..."

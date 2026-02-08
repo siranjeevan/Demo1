@@ -1,177 +1,133 @@
 import { Link } from 'react-router-dom';
-import { Mail, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
-import logoImage from '../assets/Logo Section.png';
+import { Instagram, Mail, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import logoImage from '../assets/Hope3-logo (4).png';
 
 const Footer = () => {
   return (
-    <footer className="border-t" style={{ backgroundColor: '#014e63', borderColor: 'rgba(1, 78, 99, 0.2)', color: '#F4F8F9' }}>
-      <div className="container-max section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* About Section */}
-          <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="inline-flex items-center space-x-3 mb-4">
+    <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #014e63 0%, #013a4a 100%)', color: '#F4F8F9' }}>
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-3xl rounded-full -mr-48 -mt-48 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 blur-2xl rounded-full -ml-32 -mb-32 pointer-events-none"></div>
+
+      <div className="container-max pt-20 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          
+          {/* Brand Identity Column */}
+          <div className="lg:col-span-5">
+            <Link to="/" className="inline-flex items-center gap-4 mb-8 group">
               <img
                 src={logoImage}
                 alt="Dhwayam Logo"
-                className="h-8 w-auto"
+                className="h-20 w-auto transition-transform duration-500 group-hover:scale-105"
               />
-              <h3 className="text-2xl font-serif font-bold" style={{ color: '#F4F8F9' }}>
-                Dhwayam
-              </h3>
+              <div className="flex flex-col relative justify-center items-center">
+                <span 
+                  className="alex-brush-regular tracking-wide leading-none relative z-10"
+                  style={{ 
+                    fontSize: '4rem',
+                    color: '#F4F8F9',
+                    paddingBottom: '0.2rem',
+                  }}
+                >
+                  <span style={{ fontSize: '1.25em', verticalAlign: '-0.1em' }}>D</span>hwayam
+                </span>
+                
+                {/* Swash Underline */}
+                <svg 
+                  viewBox="0 0 300 30" 
+                  className="w-full -mt-10 ml-7 transform -rotate-2"
+                  style={{ height: '14px', color: '#F4F8F9' }}
+                >
+                  <path d="M20,25 Q150,15 280,25" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+                </svg>
+                <span className="font-semibold tracking-[0.3em] uppercase text-[9px] opacity-80 mt-1">
+                  Where Traditions Converge
+                </span>
+              </div>
             </Link>
-            <p className="mb-4 max-w-md" style={{ color: 'rgba(244, 248, 249, 0.8)' }}>
-              A Gen Z-led Carnatic fusion band using music as a bridge between tradition 
-              and purpose, creating social impact through fundraising concerts and 
-              community outreach programs.
+            
+            <p className="text-lg leading-relaxed mb-4 opacity-90 max-w-lg">
+              Seattle's premium Carnatic fusion ensemble. We bridge musical tradition 
+              with humanitarian purpose through fundraising concerts and impactful 
+              community outreach.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="mailto:dhwayamfoundation@gmail.com"
-                className="transition-colors"
-                style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                aria-label="Email"
-              >
-                <Mail size={20} />
-              </a>
-              <a
-                href="#"
-                className="transition-colors"
-                style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="transition-colors"
-                style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="transition-colors"
-                style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="transition-colors"
-                style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                aria-label="YouTube"
-              >
-                <Youtube size={20} />
-              </a>
+          </div>
+
+          {/* Navigation Links Column */}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-lg font-bold mb-6 tracking-wider uppercase text-white/40">Explore</h4>
+              <ul className="space-y-4 font-medium">
+                {['About Us', 'Initiatives', 'Events', 'Contact'].map((item) => (
+                  <li key={item}>
+                    <Link 
+                      to={`/${item.toLowerCase().replace(' ', '')}`}
+                      className="opacity-70 hover:opacity-100 hover:translate-x-1 transition-all inline-block"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-6 tracking-wider uppercase text-white/40">Initiatives</h4>
+              <ul className="space-y-4 font-medium">
+                {['Youth Welfare', 'Art Therapy', 'Senior Care'].map((item) => (
+                  <li key={item}>
+                    <Link 
+                      to="/initiatives"
+                      className="opacity-70 hover:opacity-100 hover:translate-x-1 transition-all inline-block"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          {/* Initiatives Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4" style={{ color: '#F4F8F9' }}>
-              Our Initiatives
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/initiatives"
-                  className="transition-colors"
-                  style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                  onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                >
-                  Harmony for Hope
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/initiatives"
-                  className="transition-colors"
-                  style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                  onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                >
-                  Together Through Music
-                </Link>
-              </li>
+          {/* Contact & Social Column */}
+          <div className="lg:col-span-3">
+            <h4 className="text-lg font-bold mb-6 tracking-wider uppercase text-white/40">Connect</h4>
+            <p className="text-sm opacity-80 mb-6">Join our journey and stay updated with our latest stories.</p>
+            
+            <div className="flex items-center gap-6">
+              <motion.a 
+                href="https://www.instagram.com/dhwayam.music/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.15, translateY: -3 }}
+                className="transition-all duration-300 opacity-80 hover:opacity-100"
+                style={{ color: '#F4F8F9' }}
+                aria-label="Instagram"
+              >
+                <Instagram size={30} />
+              </motion.a>
 
-            </ul>
+              <motion.a 
+                href="mailto:dhwayamband@gmail.com"
+                whileHover={{ scale: 1.15, translateY: -3 }}
+                className="transition-all duration-300 opacity-80 hover:opacity-100"
+                style={{ color: '#F4F8F9' }}
+                aria-label="Email Us"
+              >
+                <Mail size={30} />
+              </motion.a>
+              
+              <div className="ml-2 border-l border-white/10 pl-6">
+                <p className="text-xs uppercase tracking-widest opacity-40 font-bold mb-1">Let's Talk</p>
+                <p className="text-sm font-medium">dhwayamband@gmail.com</p>
+              </div>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4" style={{ color: '#F4F8F9' }}>
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/events"
-                  className="transition-colors"
-                  style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                  onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                >
-                  Upcoming Events
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/booking"
-                  className="transition-colors"
-                  style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                  onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                >
-                  Book Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="transition-colors"
-                  style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                  onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="transition-colors"
-                  style={{ color: 'rgba(244, 248, 249, 0.7)' }}
-                  onMouseEnter={(e) => e.target.style.color = '#F4F8F9'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(244, 248, 249, 0.7)'}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center" style={{ borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-          <p className="text-sm" style={{ color: 'rgba(244, 248, 249, 0.7)' }}>
-            © 2026 Dhwayam Foundation. All rights reserved.
-          </p>
-          <p className="text-sm mt-2 md:mt-0" style={{ color: 'rgba(244, 248, 249, 0.7)' }}>
-            Contact: dhwayamfoundation@gmail.com
-          </p>
+        <div className="mt-12 pt-8 border-t border-white/10 flex justify-center items-center">
+          <p className="text-sm opacity-60">© 2026 Dhwayam Foundation. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Instagram } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 
 const Contact = () => {
@@ -219,7 +219,7 @@ const Contact = () => {
                       <Mail style={{ color: '#014e63' }} className="mr-4 mt-1 flex-shrink-0" size={24} />
                       <div>
                         <h4 className="font-semibold mb-1" style={{ color: '#014e63' }}>Email</h4>
-                        <p style={{ color: 'rgba(1, 78, 99, 0.7)' }}>dhwayamfoundation@gmail.com</p>
+                        <p style={{ color: 'rgba(1, 78, 99, 0.7)' }}>dhwayamband@gmail.com</p>
                         <p className="text-sm mt-1" style={{ color: 'rgba(1, 78, 99, 0.6)' }}>
                           Primary contact for all inquiries
                         </p>
@@ -259,44 +259,18 @@ const Contact = () => {
                   </p>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href="https://www.instagram.com/dhwayam.music/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-3 rounded-lg transition-colors"
                       style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)' }}
                       onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.2)'}
                       onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.1)'}
                       aria-label="Instagram"
                     >
-                      <Instagram style={{ color: '#014e63' }} size={24} />
-                    </a>
-                    <a
-                      href="#"
-                      className="p-3 rounded-lg transition-colors"
-                      style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)' }}
-                      onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.2)'}
-                      onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.1)'}
-                      aria-label="Facebook"
-                    >
-                      <Facebook style={{ color: '#014e63' }} size={24} />
-                    </a>
-                    <a
-                      href="#"
-                      className="p-3 rounded-lg transition-colors"
-                      style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)' }}
-                      onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.2)'}
-                      onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.1)'}
-                      aria-label="Twitter"
-                    >
-                      <Twitter style={{ color: '#014e63' }} size={24} />
-                    </a>
-                    <a
-                      href="#"
-                      className="p-3 rounded-lg transition-colors"
-                      style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)' }}
-                      onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.2)'}
-                      onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.1)'}
-                      aria-label="YouTube"
-                    >
-                      <Youtube style={{ color: '#014e63' }} size={24} />
+                      <span className="flex items-center space-x-2">
+                        <Instagram style={{ color: '#014e63' }} size={24} />
+                      </span>
                     </a>
                   </div>
                 </div>
@@ -357,17 +331,9 @@ const Contact = () => {
               learn more about our mission, we're here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
               <a 
-                href="/booking" 
-                className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#014e63'}
-              >
-                Book a Performance
-              </a>
-              <a 
-                href="mailto:dhwayamfoundation@gmail.com" 
+                href="mailto:dhwayamband@gmail.com" 
                 className="border-2 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md"
                 style={{ borderColor: '#014e63', color: '#014e63', backgroundColor: 'transparent' }}
                 onMouseEnter={(e) => {

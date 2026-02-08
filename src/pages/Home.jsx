@@ -1,12 +1,41 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { ArrowRight, Heart, Users, Calendar } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import CountUp from '../components/CountUp';
 import heroImage1 from '../assets/Hero1.png';
-import heroImage2 from '../assets/Hero2.png';
+import testimonial1 from '../assets/testimonial1.png';
+import testimonial2 from '../assets/testimonial2.png';
+import testimonial3 from '../assets/testimonial3.png';
 
 const Home = () => {
+  const [activeTestimonial, setActiveTestimonial] = useState(1);
+
+  const testimonials = [
+    {
+      id: 0,
+      author: "Sankara Healthcare",
+      role: "Partner Organization",
+      image: testimonial1,
+      quote: "Dhwayam's performance at our fundraiser was absolutely magical. They didn't just play music – they created an experience that moved everyone in the room. The impact on our cause was incredible."
+    },
+    {
+      id: 1,
+      author: "Aegis Living",
+      role: "Senior Living Community",
+      image: testimonial2,
+      quote: "The residents were so happy during the Diwali performance. Many had tears of joy. Dhwayam brought back beautiful memories for them through their music. Truly heartwarming."
+    },
+    {
+      id: 2,
+      author: "Music Community",
+      role: "Event Attendee",
+      image: testimonial3,
+      quote: "As a Gen Z musician, it's inspiring to see young people using their talents for social good. Dhwayam is redefining what it means to be an artist with purpose."
+    }
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,27 +53,89 @@ const Home = () => {
             alt="Dhwayam Performance"
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
-          <img
-            src={heroImage2}
-            alt="Dhwayam Musicians"
-            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
-          />
         </div>
         
         <div className="relative z-20 container-max section-padding text-center" style={{ color: '#F4F8F9' }}>
-          <AnimatedSection>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6">
-              Music That{' '}
-              <span style={{ background: 'linear-gradient(to right, rgba(244, 248, 249, 0.9), #F4F8F9)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.08
+                }
+              }
+            }}
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 overflow-hidden">
+              {"Music That ".split(" ").map((word, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-block mr-3"
+                  variants={{
+                    hidden: { opacity: 0, y: 100 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+              <motion.span
+                className="inline-block"
+                variants={{
+                  hidden: { opacity: 0, y: 100 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                style={{ 
+                  background: 'linear-gradient(to right, rgba(244, 248, 249, 0.9), #F4F8F9)', 
+                  WebkitBackgroundClip: 'text', 
+                  backgroundClip: 'text', 
+                  WebkitTextFillColor: 'transparent', 
+                  color: 'transparent' 
+                }}
+              >
                 Transforms
-              </span>
+              </motion.span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
-              We're Dhwayam, a Gen Z-led Carnatic fusion band using music as a bridge 
-              between tradition and purpose, creating lasting social impact through 
-              every performance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="overflow-hidden mb-8">
+              <motion.p 
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0, 
+                    transition: { 
+                      duration: 0.8, 
+                      delay: 0.4,
+                      ease: "easeOut" 
+                    } 
+                  }
+                }}
+                className="text-xl md:text-2xl max-w-3xl mx-auto" 
+                style={{ color: 'rgba(244, 248, 249, 0.9)' }}
+              >
+                We're Dhwayam, a Gen Z-led Carnatic fusion band using music as a bridge 
+                between tradition and purpose, creating lasting social impact through 
+                every performance.
+              </motion.p>
+            </div>
+
+            <motion.div 
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0, 
+                  transition: { 
+                    duration: 0.6, 
+                    delay: 0.8,
+                    ease: "easeOut" 
+                  } 
+                }
+              }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <Link 
                 to="/events" 
                 className="group font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_15px_rgba(244,248,249,0.3)] hover:shadow-[0_0_25px_rgba(244,248,249,0.5)] inline-flex items-center justify-center backdrop-blur-sm"
@@ -64,9 +155,8 @@ const Home = () => {
               >
                 Explore Events <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Link>
-
-            </div>
-          </AnimatedSection>
+            </motion.div>
+          </motion.div>
         </div>
         
         {/* Scroll Indicator */}
@@ -232,89 +322,117 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-padding" style={{ backgroundColor: '#F4F8F9' }}>
+      <section className="section-padding overflow-hidden" style={{ backgroundColor: '#F4F8F9' }}>
         <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4" style={{ color: '#014e63' }}>
-                What People <span className="gradient-text">Say</span>
-              </h2>
-              <p className="text-xl" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                Voices from our community and partners
-              </p>
-            </div>
-          </AnimatedSection>
+          {/* Header - Top Centered */}
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center mb-16 max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6" style={{ color: '#014e63' }}>
+              What People <span className="gradient-text">Say</span>
+            </h2>
+            <p className="text-xl leading-relaxed" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
+              Voices from our community and partners who have experienced the transformative power of Carnatic fusion.
+            </p>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedSection delay={0.2}>
-              <div className="rounded-xl p-8 shadow-lg border relative" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-                {/* Quote Icon */}
-                <div className="absolute -top-4 left-8">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-2xl font-serif" style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}>
-                    "
-                  </div>
-                </div>
-                <p className="mt-4 mb-6 italic" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
-                  "Dhwayam's performance at our fundraiser was absolutely magical. They didn't just play music – they created an experience that moved everyone in the room. The impact on our cause was incredible."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)', color: '#014e63' }}>
-                    SK
-                  </div>
-                  <div className="ml-4">
-                    <p className="font-semibold" style={{ color: '#014e63' }}>Sankara Healthcare</p>
-                    <p className="text-sm" style={{ color: 'rgba(1, 78, 99, 0.6)' }}>Partner Organization</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
+          {/* Cards - Full Width Below Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="w-full flex flex-col md:flex-row gap-4 h-[600px] md:h-[450px]"
+          >
+            {testimonials.map((testimonial, index) => {
+                const isActive = activeTestimonial === index;
+                return (
+                  <div
+                    key={testimonial.id}
+                    onMouseEnter={() => setActiveTestimonial(index)}
+                    className="relative rounded-3xl cursor-pointer overflow-hidden transition-all duration-700 shadow-xl border border-transparent"
+                    style={{ 
+                      flex: isActive ? 3.5 : 1,
+                      backgroundColor: isActive ? '#014e63' : '#FFFFFF',
+                      transition: 'all 0.8s cubic-bezier(0.2, 1, 0.2, 1)',
+                      borderColor: isActive ? '#014e63' : 'rgba(1, 78, 99, 0.1)'
+                    }}
+                  >
+                    {/* Background Quote Icon Overlay */}
+                    <div className="absolute -bottom-10 -right-10 opacity-5">
+                      <Heart size={isActive ? 200 : 100} color={isActive ? "#F4F8F9" : "#014e63"} />
+                    </div>
 
-            <AnimatedSection delay={0.4}>
-              <div className="rounded-xl p-8 shadow-lg border relative" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-                {/* Quote Icon */}
-                <div className="absolute -top-4 left-8">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-2xl font-serif" style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}>
-                    "
-                  </div>
-                </div>
-                <p className="mt-4 mb-6 italic" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
-                  "The residents were so happy during the Diwali performance. Many had tears of joy. Dhwayam brought back beautiful memories for them through their music. Truly heartwarming."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)', color: '#014e63' }}>
-                    AL
-                  </div>
-                  <div className="ml-4">
-                    <p className="font-semibold" style={{ color: '#014e63' }}>Aegis Living</p>
-                    <p className="text-sm" style={{ color: 'rgba(1, 78, 99, 0.6)' }}>Senior Living Community</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
+                    <div className="h-full flex flex-col p-8 md:p-10 z-10 relative">
+                      {/* Quote Icon - Scale and Tilt Animation */}
+                      <div 
+                        className="mb-8 transition-transform duration-500"
+                        style={{ 
+                          transform: isActive ? 'scale(1.1) rotate(5deg)' : 'scale(1) rotate(0deg)'
+                        }}
+                      >
+                        <div 
+                          className="w-12 h-12 rounded-full flex items-center justify-center text-2xl font-serif transition-colors duration-500"
+                          style={{ 
+                            backgroundColor: isActive ? 'rgba(244, 248, 249, 0.2)' : 'rgba(1, 78, 99, 0.1)',
+                            color: isActive ? '#F4F8F9' : '#014e63' 
+                          }}
+                        >
+                          "
+                        </div>
+                      </div>
 
-            <AnimatedSection delay={0.6}>
-              <div className="rounded-xl p-8 shadow-lg border relative" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-                {/* Quote Icon */}
-                <div className="absolute -top-4 left-8">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-2xl font-serif" style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}>
-                    "
+                      {/* Content Area */}
+                      <div className="flex flex-col h-full justify-between">
+                        <div>
+                          {/* Quote Text - Slide Up Reveal */}
+                          <div 
+                            className={`transition-all duration-700 overflow-hidden ${isActive ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'}`}
+                            style={{ 
+                              transform: isActive ? 'translateY(0)' : 'translateY(20px)',
+                              transitionDelay: isActive ? '0.3s' : '0s'
+                            }}
+                          >
+                            <p className="text-lg md:text-xl italic mb-8 font-serif leading-relaxed" style={{ color: '#F4F8F9' }}>
+                              "{testimonial.quote}"
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Author Info */}
+                        <div className="flex items-center">
+                          <div 
+                            className="w-14 h-14 rounded-2xl overflow-hidden shadow-md transition-all duration-500"
+                            style={{ 
+                              transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                              border: isActive ? '2px solid rgba(244, 248, 249, 0.3)' : '1px solid rgba(1, 78, 99, 0.1)'
+                            }}
+                          >
+                            <img 
+                              src={testimonial.image} 
+                              alt={testimonial.author}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className={`ml-4 transition-all duration-500 ${isActive ? 'translate-x-0' : 'translate-x-1'}`}>
+                            <p className="font-bold text-lg leading-tight transition-colors duration-500" style={{ color: isActive ? '#F4F8F9' : '#014e63' }}>
+                              {testimonial.author}
+                            </p>
+                            <p className="text-sm transition-colors duration-500" style={{ color: isActive ? 'rgba(244, 248, 249, 0.7)' : 'rgba(1, 78, 99, 0.5)' }}>
+                              {testimonial.role}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <p className="mt-4 mb-6 italic" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
-                  "As a Gen Z musician, it's inspiring to see young people using their talents for social good. Dhwayam is redefining what it means to be an artist with purpose."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)', color: '#014e63' }}>
-                    MC
-                  </div>
-                  <div className="ml-4">
-                    <p className="font-semibold" style={{ color: '#014e63' }}>Music Community</p>
-                    <p className="text-sm" style={{ color: 'rgba(1, 78, 99, 0.6)' }}>Event Attendee</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
+                );
+              })}
+          </motion.div>
         </div>
       </section>
 
@@ -392,13 +510,13 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to="/booking" 
+                to="/contact" 
                 className="font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg"
                 style={{ backgroundColor: '#F4F8F9', color: '#014e63' }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(244, 248, 249, 0.9)'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#F4F8F9'}
               >
-                Book Us Now <ArrowRight className="ml-2" size={20} />
+                Contact Us <ArrowRight className="ml-2" size={20} />
               </Link>
 
             </div>

@@ -204,16 +204,16 @@ const About = () => {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((index) => (
-              <AnimatedSection key={index} delay={index * 0.2}>
-                <div className="rounded-xl p-6 text-center shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-                  <div className="rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: 'rgba(1, 78, 99, 0.05)' }}>
+          <div className="max-w-sm mx-auto">
+            {[1].map((index) => (
+              <AnimatedSection key={index} delay={0.2}>
+                <div className="rounded-xl p-8 text-center shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
+                  <div className="rounded-full w-24 h-24 mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: 'rgba(1, 78, 99, 0.05)' }}>
                     <Users style={{ color: '#014e63' }} size={32} />
                   </div>
                   <h3 className="text-xl font-semibold mb-2" style={{ color: '#014e63' }}>Advisor Name</h3>
-                  <p className="mb-3 font-medium" style={{ color: '#014e63' }}>Music Industry Mentor</p>
-                  <p className="text-sm" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
+                  <p className="mb-4 font-medium" style={{ color: '#014e63' }}>Music Industry Mentor</p>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
                     Providing guidance on musical excellence and industry best practices 
                     for impactful performances.
                   </p>

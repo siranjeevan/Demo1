@@ -157,7 +157,7 @@ The website showcases real impact data:
 
 ### Contact Information
 
-- **Email**: dhwayamfoundation@gmail.com
+- **Email**: dhwayamband@gmail.com
 - **Location**: Seattle, Washington
 - **Response Time**: Within 24 hours
 
