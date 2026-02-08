@@ -14,7 +14,7 @@ git add .
 git commit -m "Initial commit: Dhwayam website ready for deployment"
 
 # Add GitHub remote (replace with your actual repository URL)
-git remote add origin https://github.com/yourusername/dhwayam-website.git
+git remote add origin https://github.com/h3-services/dhwayam.git
 
 # Push to GitHub
 git push -u origin main
@@ -25,12 +25,12 @@ Before deploying, update these files with your actual GitHub username:
 
 **package.json** - Update the homepage URL:
 ```json
-"homepage": "https://YOURUSERNAME.github.io/dhwayam-website"
+"homepage": "https://YOURUSERNAME.github.io/dhwayam"
 ```
 
 **vite.config.js** - Update the base path:
 ```javascript
-base: '/dhwayam-website/'
+base: '/dhwayam/'
 ```
 
 ### 3. **Deploy Options**
@@ -77,7 +77,7 @@ chmod +x deploy.sh
 2. Navigate to **Settings** → **Pages**
 3. Ensure source is set to **Deploy from a branch**
 4. Select **gh-pages** branch
-5. Your website will be available at: `https://yourusername.github.io/dhwayam-website`
+5. Your website will be available at: `https://h3-services.github.io/dhwayam`
 
 ## 🔍 Troubleshooting
 
@@ -100,7 +100,7 @@ chmod +x deploy.sh
 <html>
 <head>
   <script>
-    window.location.href = '/dhwayam-website/';
+    window.location.href = '/dhwayam/';
   </script>
 </head>
 </html>

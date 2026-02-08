@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   // Use the subdirectory for GitHub Pages, otherwise use root for Vercel
-  base: process.env.GITHUB_ACTIONS ? '/dhwayam-website/' : '/',
+  base: '/', // Ensure base is root for Firebase Hosting
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
