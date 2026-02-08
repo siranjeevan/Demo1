@@ -340,7 +340,7 @@ const Events = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding min-h-[60vh] flex items-center justify-center pt-32" style={{ background: 'linear-gradient(to right, #014e63, rgba(1, 78, 99, 0.9))', color: '#F4F8F9' }}>
+      <section className="section-padding min-h-[30vh] lg:min-h-[50vh] flex items-center justify-center pt-24 md:pt-32" style={{ background: 'linear-gradient(to right, #014e63, rgba(1, 78, 99, 0.9))', color: '#F4F8F9' }}>
         <div className="container-max text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
