@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Music, Heart, Users, Award } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
+import aboutHero from '../assets/AboutHero.png';
 
 const About = () => {
   return (
@@ -11,11 +12,21 @@ const About = () => {
       className=""
     >
       {/* Hero Section */}
-      <section className="section-padding min-h-[60vh] flex items-center justify-center pt-32" style={{ background: 'linear-gradient(to bottom right, #014e63, rgba(1, 78, 99, 0.9), rgba(1, 78, 99, 0.8))', color: '#F4F8F9' }}>
-        <div className="container-max">
+      <section className="relative section-padding min-h-[60vh] flex items-center justify-center pt-32 overflow-hidden">
+        {/* Background Image & Overlay */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom right, rgba(1, 78, 99, 0.7), rgba(1, 78, 99, 0.6), rgba(1, 78, 99, 0.5))' }}></div>
+          <img 
+            src={aboutHero} 
+            alt="Dhwayam Band" 
+            className="w-full h-full object-cover opacity-60"
+          />
+        </div>
+
+        <div className="container-max relative z-20">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#F4F8F9]">
                 About <span style={{ background: 'linear-gradient(to right, rgba(244, 248, 249, 0.9), #F4F8F9)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>Dhwayam</span>
               </h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
