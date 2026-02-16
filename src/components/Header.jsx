@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import logoImage from '../assets/Hope3-logo (4).png';
+import logoImage from '../assets/logo_optimized.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

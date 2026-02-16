@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ArrowRight, Heart, Users, Calendar } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import CountUp from '../components/CountUp';
-import heroImage1 from '../assets/Hero1.png';
+import heroImage1 from '../assets/Hero1_optimized.jpg';
 import testimonial1 from '../assets/testimonial1.png';
 import testimonial2 from '../assets/testimonial2.png';
 import testimonial3 from '../assets/testimonial3.png';
@@ -52,6 +52,8 @@ const Home = () => {
             src={heroImage1}
             alt="Dhwayam Performance"
             className="absolute inset-0 w-full h-full object-cover opacity-60"
+            loading="eager"
+            fetchpriority="high"
           />
         </div>
         

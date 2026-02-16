@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Info, Target, Music, Phone, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import logoImage from '../assets/Hope3-logo (4).png';
+import logoImage from '../assets/logo_optimized.png';
 
 const Sidebar = () => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Music, Heart, Users, Award } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import aboutHero from '../assets/AboutHero.png';
+import aboutHero from '../assets/AboutHero_optimized.jpg';
 
 const About = () => {
   return (
@@ -20,6 +20,8 @@ const About = () => {
             src={aboutHero} 
             alt="Dhwayam Band" 
             className="w-full h-full object-cover opacity-60"
+            loading="eager"
+            fetchpriority="high"
           />
         </div>
 
