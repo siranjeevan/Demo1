@@ -53,7 +53,7 @@ const Home = () => {
             alt="Dhwayam Performance"
             className="absolute inset-0 w-full h-full object-cover opacity-60"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </div>
         
@@ -520,7 +520,6 @@ const Home = () => {
               >
                 Contact Us <ArrowRight className="ml-2" size={20} />
               </Link>
-
             </div>
           </AnimatedSection>
         </div>

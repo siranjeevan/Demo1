@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Mail, ArrowRight } from 'lucide-react';
+import { Instagram, Mail, ArrowRight, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
 import logoImage from '../assets/logo_optimized.png';
 
@@ -39,7 +39,7 @@ const Footer = () => {
                   className="w-full -mt-6 md:-mt-10 ml-4 md:ml-7 transform -rotate-2"
                   style={{ height: 'clamp(8px, 2vw, 14px)', color: '#F4F8F9' }}
                 >
-                  <path d="M20,25 Q150,15 280,25" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+                  <path d="M20,25 Q150,15 280,25" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" />
                 </svg>
                 <span className="font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase text-[7px] md:text-[9px] opacity-80 mt-1">
                   Where Traditions Converge
@@ -89,12 +89,25 @@ const Footer = () => {
           </div>
 
           {/* Contact & Social Column */}
-          <div className="lg:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="lg:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="text-base md:text-lg font-bold mb-6 tracking-wider uppercase text-white/40">Connect</h4>
             <p className="text-sm opacity-80 mb-6 max-w-xs transition-all">Join our journey and stay updated with our latest stories.</p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-4 lg:gap-6">
+            <div className="flex flex-col gap-8 w-full items-center md:items-start">
+              {/* Social Icons Row */}
               <div className="flex items-center gap-6">
+                <motion.a 
+                  href="https://www.facebook.com/dhwayam.music/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.15, translateY: -3 }}
+                  className="transition-all duration-300 opacity-80 hover:opacity-100"
+                  style={{ color: '#F4F8F9' }}
+                  aria-label="Facebook"
+                >
+                  <Facebook size={28} />
+                </motion.a>
+
                 <motion.a 
                   href="https://www.instagram.com/dhwayam.music/" 
                   target="_blank" 
@@ -118,9 +131,12 @@ const Footer = () => {
                 </motion.a>
               </div>
               
-              <div className="sm:border-l border-white/10 sm:pl-6 text-center sm:text-left">
+              {/* Let's Talk Section */}
+              <div className="md:border-l border-white/10 md:pl-6 text-center md:text-left">
                 <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-1">Let's Talk</p>
-                <p className="text-sm font-medium break-all">dhwayamband@gmail.com</p>
+                <a href="mailto:dhwayamband@gmail.com" className="text-sm font-medium break-all hover:opacity-80 transition-opacity">
+                  dhwayamband@gmail.com
+                </a>
               </div>
             </div>
           </div>

@@ -56,7 +56,7 @@ const Sidebar = () => {
                   d="M20,25 Q150,15 280,25" 
                   fill="none" 
                   stroke="currentColor" 
-                  strokeWidth="3.5" 
+                  strokeWidth={3.5} 
                   strokeLinecap="round"
                 />
               </svg>
@@ -83,7 +83,7 @@ const Sidebar = () => {
         className="flex-1 overflow-y-auto py-6 px-5 space-y-2 relative scrollbar-hide flex flex-col"
         style={{ 
           backgroundColor: '#00475b',
-          borderTopRightRadius: '50px',
+          borderTopRightRadius: '30px',
         }}
       >
         {/* Abstract background shapes inside nav area */}

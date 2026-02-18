@@ -21,7 +21,7 @@ const About = () => {
             alt="Dhwayam Band" 
             className="w-full h-full object-cover opacity-60"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </div>
 

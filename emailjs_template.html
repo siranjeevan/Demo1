@@ -1,0 +1,132 @@
+<div
+  style="
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+  "
+>
+  <!-- Header -->
+  <div
+    style="
+      background-color: #014e63;
+      padding: 20px;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+    "
+  >
+    <h2 style="color: #ffffff; margin: 0; font-size: 24px">
+      New Contact Form Submission
+    </h2>
+  </div>
+
+  <!-- Content -->
+  <div
+    style="
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      background-color: #ffffff;
+    "
+  >
+    <p style="font-size: 16px; margin-bottom: 20px">
+      You have received a new message from <strong>{{name}}</strong> via the
+      Dhwayam website contact form.
+    </p>
+
+    <!-- Details Table -->
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px">
+      <tr>
+        <td
+          style="
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            width: 120px;
+            font-weight: bold;
+            color: #555;
+          "
+        >
+          Name:
+        </td>
+        <td style="padding: 10px; border-bottom: 1px solid #eee">{{name}}</td>
+      </tr>
+      <tr>
+        <td
+          style="
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            color: #555;
+          "
+        >
+          Email:
+        </td>
+        <td style="padding: 10px; border-bottom: 1px solid #eee">
+          <a
+            href="mailto:{{email}}"
+            style="color: #014e63; text-decoration: none"
+            >{{email}}</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            color: #555;
+          "
+        >
+          Subject:
+        </td>
+        <td style="padding: 10px; border-bottom: 1px solid #eee">
+          {{subject}}
+        </td>
+      </tr>
+    </table>
+
+    <!-- Message Body -->
+    <div
+      style="
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #014e63;
+      "
+    >
+      <h3
+        style="
+          margin-top: 0;
+          font-size: 14px;
+          color: #555;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        "
+      >
+        Message:
+      </h3>
+      <p style="white-space: pre-wrap; margin-bottom: 0; line-height: 1.6">
+        {{message}}
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div
+      style="
+        margin-top: 30px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+        font-size: 12px;
+        color: #888;
+        text-align: center;
+      "
+    >
+      <p>This email was sent from the Dhwayam Contact Form.</p>
+    </div>
+  </div>
+</div>

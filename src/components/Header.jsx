@@ -88,7 +88,7 @@ const Header = () => {
                   d="M20,25 Q150,15 280,25" 
                   fill="none" 
                   stroke="currentColor" 
-                  strokeWidth="3.5" 
+                  strokeWidth={3.5} 
                   strokeLinecap="round"
                 />
               </svg>

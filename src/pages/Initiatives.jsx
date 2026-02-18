@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Users, ArrowRight, Calendar, MapPin, Target, DollarSign, Share2, Instagram } from 'lucide-react';
+import { Heart, Users, ArrowRight, Calendar, MapPin, Target, DollarSign, Share2, Instagram, Facebook } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import CountUp from '../components/CountUp';
 
@@ -340,17 +340,30 @@ const Initiatives = () => {
                 <p className="mb-6" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
                   Stay connected with our journey and latest updates on social media.
                 </p>
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
-                  style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
-                  onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
-                  onMouseLeave={(e) => e.target.style.backgroundColor = '#014e63'}
-                >
-                  Instagram <Instagram className="ml-2" size={16} />
-                </a>
+                <div className="flex flex-col gap-3">
+                  <a 
+                    href="https://facebook.com/dhwayam.music" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center justify-center text-sm"
+                    style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#014e63'}
+                  >
+                    Facebook <Facebook className="ml-2" size={16} />
+                  </a>
+                  <a 
+                    href="https://instagram.com/dhwayam.music" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center justify-center text-sm"
+                    style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#014e63'}
+                  >
+                    Instagram <Instagram className="ml-2" size={16} />
+                  </a>
+                </div>
               </div>
             </AnimatedSection>
           </div>
