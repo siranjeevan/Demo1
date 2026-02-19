@@ -14,27 +14,40 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative section-padding min-h-[60vh] flex items-center justify-center pt-32 overflow-hidden">
         {/* Background Image & Overlay */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom right, rgba(1, 78, 99, 0.7), rgba(1, 78, 99, 0.6), rgba(1, 78, 99, 0.5))' }}></div>
+        <div className="absolute inset-0 z-0">
           <img 
             src={aboutHero} 
             alt="Dhwayam Band" 
-            className="w-full h-full object-cover opacity-60"
-            loading="eager"
-            fetchPriority="high"
+            className="w-full h-full object-cover"
           />
+          {/* Professional Overlay System */}
+          <div className="absolute inset-0 bg-[#00475b]/80 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00475b]/40 to-[#F4F8F9]"></div>
+          
+          {/* Ambient Light Effects */}
+          <div className="absolute top-1/4 left-1/4 w-[30vw] h-[30vw] bg-teal-400/20 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-[20vw] h-[20vw] bg-[#fbbf24]/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="container-max relative z-20">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#F4F8F9]">
-                About <span style={{ background: 'linear-gradient(to right, rgba(244, 248, 249, 0.9), #F4F8F9)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>Dhwayam</span>
+              <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 leading-tight text-white">
+                About <span className="relative inline-block">
+                  <span className="relative z-10 italic">Dhwayam</span>
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: '100%' }}
+                    transition={{ delay: 0.5, duration: 1.2 }}
+                    className="absolute bottom-4 left-0 h-3 md:h-5 bg-teal-300/30 -z-0 rounded-full"
+                  ></motion.div>
+                </span>
               </h1>
-              <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
+              
+              <div className="w-16 h-1 bg-white/30 mb-8 rounded-full"></div>
+              
+              <p className="text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed text-white/90 font-light px-4">
                 Where tradition meets purpose, and music becomes a catalyst for meaningful change
               </p>
-            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -45,12 +58,12 @@ const About = () => {
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex justify-center mb-6">
-                <Music style={{ color: '#014e63' }} size={48} />
+                <Music style={{ color: '#00475b' }} size={48} />
               </div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8" style={{ color: '#014e63' }}>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8" style={{ color: '#00475b' }}>
                 Our <span className="gradient-text">Mission</span>
               </h2>
-              <p className="text-xl leading-relaxed mb-8" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
+              <p className="text-xl leading-relaxed mb-8" style={{ color: 'rgba(0, 71, 91, 0.8)' }}>
                 At Dhwayam, we believe music is more than entertainment—it's a bridge that connects 
                 hearts, cultures, and communities. We use the timeless beauty of Carnatic music, 
                 fused with contemporary elements, as a powerful tool for social impact. Every 
@@ -58,7 +71,7 @@ const About = () => {
                 causes that matter.
               </p>
               <div className="rounded-xl p-8 border" style={{ backgroundColor: 'rgba(1, 78, 99, 0.05)', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-                <p className="text-lg font-medium italic" style={{ color: '#014e63' }}>
+                <p className="text-lg font-medium italic" style={{ color: '#00475b' }}>
                   "Music has the power to heal, unite, and inspire. We're here to harness that 
                   power for the greater good, one performance at a time."
                 </p>
@@ -73,21 +86,21 @@ const About = () => {
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: '#014e63' }}>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: '#00475b' }}>
                 Who <span className="gradient-text">We Are</span>
               </h2>
-              <p className="text-lg mb-6" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
+              <p className="text-lg mb-6" style={{ color: 'rgba(0, 71, 91, 0.8)' }}>
                 Dhwayam was born from the shared vision of two young musicians in Seattle, 
                 deeply rooted in the rich tradition of Carnatic music yet passionate about 
                 addressing the challenges of our generation.
               </p>
-              <p className="text-lg mb-6" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
+              <p className="text-lg mb-6" style={{ color: 'rgba(0, 71, 91, 0.8)' }}>
                 As Gen Z artists, we understand the power of music to transcend boundaries 
                 and create meaningful connections. We've taken the classical foundations of 
                 Carnatic music and woven them with contemporary sounds to create something 
                 uniquely ours—music that honors our heritage while speaking to today's world.
               </p>
-              <p className="text-lg" style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
+              <p className="text-lg" style={{ color: 'rgba(0, 71, 91, 0.8)' }}>
                 Our journey began with a simple question: How can we use our musical gifts 
                 to make a real difference? The answer became Dhwayam—a platform where every 
                 note played serves a greater purpose.
@@ -96,7 +109,7 @@ const About = () => {
 
             <AnimatedSection delay={0.3}>
               <div className="rounded-xl p-8 shadow-lg border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.2)' }}>
-                <h3 className="text-2xl font-serif font-semibold mb-6" style={{ color: '#014e63' }}>
+                <h3 className="text-2xl font-serif font-semibold mb-6" style={{ color: '#00475b' }}>
                   Our Values
                 </h3>
                 <div className="space-y-4">

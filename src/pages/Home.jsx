@@ -44,7 +44,7 @@ const Home = () => {
       className=""
     >
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background Images */}
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom right, rgba(1, 78, 99, 0.7), rgba(1, 78, 99, 0.6), rgba(1, 78, 99, 0.5))' }}></div>
@@ -161,15 +161,47 @@ const Home = () => {
           </motion.div>
         </div>
         
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator — Premium Chevron Cascade */}
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 1.5 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer group"
+          onClick={() => window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
         >
-          <div className="w-6 h-10 border-2 rounded-full flex justify-center" style={{ borderColor: '#F4F8F9' }}>
-            <div className="w-1 h-3 rounded-full mt-2" style={{ backgroundColor: '#F4F8F9' }}></div>
+          {/* Glowing vertical line */}
+          <motion.div 
+            animate={{ height: ['0px', '40px', '0px'] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-[1px] bg-gradient-to-b from-transparent via-white/60 to-transparent mb-3"
+          />
+          
+          {/* Staggered chevrons */}
+          <div className="flex flex-col items-center gap-[2px]">
+            {[0, 1, 2].map((i) => (
+              <motion.svg
+                key={i}
+                width="16" height="8" viewBox="0 0 16 8"
+                animate={{ 
+                  y: [0, 4, 0], 
+                  opacity: [0.2, 0.8, 0.2] 
+                }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity, 
+                  ease: 'easeInOut',
+                  delay: i * 0.15 
+                }}
+              >
+                <path d="M1 1L8 7L15 1" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+              </motion.svg>
+            ))}
           </div>
+
+          {/* Label */}
+          <span className="mt-3 text-white/40 text-[9px] uppercase tracking-[0.4em] font-semibold group-hover:text-white/70 transition-colors duration-500">
+            Discover More
+          </span>
         </motion.div>
       </section>
 

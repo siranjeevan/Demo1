@@ -28,18 +28,7 @@ const Events = () => {
 
   const { upcomingEvents, pastEvents } = eventsData;
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[#F4F8F9]">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-12 h-12 border-4 border-[#00475b]/20 border-t-[#00475b] rounded-full mb-4"
-        />
-        <p className="text-[#00475b]/60 font-serif italic animate-pulse">Experiencing the magic...</p>
-      </div>
-    );
-  }
+
 
   return (
     <motion.div
@@ -117,11 +106,21 @@ const Events = () => {
           </AnimatedSection>
 
           <div className="grid gap-8">
-            {upcomingEvents.map((event, index) => (
+            {loading ? (
+              <div className="flex flex-col items-center py-20 bg-white rounded-2xl border border-teal-900/5 shadow-sm">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  className="w-10 h-10 border-4 border-teal-900/10 border-t-[#00475b] rounded-full mb-4"
+                />
+                <p className="text-[#00475b]/40 font-serif italic">Curating upcoming performances...</p>
+              </div>
+            ) : (
+              upcomingEvents.map((event, index) => (
               <AnimatedSection key={event.id} delay={index * 0.1}>
                 <div className="rounded-2xl overflow-hidden bg-white shadow-2xl border flex flex-col lg:flex-row" style={{ borderColor: 'rgba(1, 78, 99, 0.05)' }}>
                   {/* Left Content Side */}
-                  <div className="flex-[2] p-8 md:p-10">
+                  <div className="flex-[3] p-8 md:p-10">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
                       <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-teal-50 text-[#00475b] border border-teal-900/5">
                         {event.initiative}
@@ -136,54 +135,82 @@ const Events = () => {
                     <p className="text-lg mb-8 leading-relaxed text-[#00475b]/70 font-light">{event.description}</p>
                     
                     <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-4">
-                      <div className="flex items-center text-[#014e63]">
-                        <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#F4F8F9]">
-                          <Clock size={16} />
+                      <div className="flex items-center text-[#00475b]">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-teal-50 border border-teal-900/5">
+                          <Clock size={14} className="opacity-70" />
                         </div>
-                        <span className="text-sm font-medium opacity-80">{event.time}</span>
+                        <span className="text-xs font-bold uppercase tracking-wide opacity-60">{event.time}</span>
                       </div>
-                      <div className="flex items-center text-[#014e63]">
-                        <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#F4F8F9]">
-                          <MapPin size={16} />
+                      <div className="flex items-center text-[#00475b]">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-teal-50 border border-teal-900/5">
+                          <MapPin size={14} className="opacity-70" />
                         </div>
-                        <span className="text-sm font-medium opacity-80">{event.location}</span>
+                        <span className="text-xs font-bold uppercase tracking-wide opacity-60">{event.location}</span>
                       </div>
-                      <div className="flex items-center text-[#014e63]">
-                        <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#F4F8F9]">
-                          <Users size={16} />
+                      <div className="flex items-center text-[#00475b]">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-teal-50 border border-teal-900/5">
+                          <Users size={14} className="opacity-70" />
                         </div>
-                        <span className="text-sm font-medium opacity-80">{event.partner}</span>
+                        <span className="text-xs font-bold uppercase tracking-wide opacity-60">{event.partner}</span>
                       </div>
-                      <div className="flex items-center text-[#014e63]">
-                        <div className="w-8 h-8 rounded-full flex items-center justify-center mr-3 bg-[#F4F8F9]">
-                          <Tag size={16} />
+                      <div className="flex items-center text-[#00475b]">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center mr-3 bg-teal-50 border border-teal-900/5">
+                          <Tag size={14} className="opacity-70" />
                         </div>
-                        <span className="text-sm font-medium opacity-80">{event.ticketInfo}</span>
+                        <span className="text-xs font-bold uppercase tracking-wide opacity-60">{event.ticketInfo}</span>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Right Action Side */}
-                  <div className="flex-1 p-8 md:p-10 flex flex-col justify-center items-center text-center bg-teal-50/20">
-                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm bg-white border border-teal-900/5">
-                      <HandHeart style={{ color: '#00475b' }} size={32} />
-                    </div>
-                    <h4 className="text-xs uppercase tracking-[0.2em] font-bold mb-3 text-[#00475b]/40">Engage</h4>
-                    <p className="text-sm mb-8 leading-relaxed text-[#00475b]/60 font-medium">
-                      Be part of our mission to create positive change through the power of Carnatic fusion.
-                    </p>
-                    <motion.button 
-                      whileHover={{ y: -3, scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
-                      style={{ backgroundColor: '#00475b', color: '#F4F8F9' }}
-                    >
-                      Learn More <ArrowRight size={18} />
-                    </motion.button>
+                                   {/* Right Action Side or Image */}
+                  <div className="flex-1 min-h-[300px] lg:max-w-xs lg:min-h-0 overflow-hidden">
+                    {event.image ? (
+                      <div 
+                        className="relative h-full w-full cursor-pointer group"
+                        onClick={() => setSelectedImage(event.image)}
+                      >
+                        <img 
+                          src={event.image} 
+                          alt={event.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8">
+                          <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60 mb-1">Performance Details</h4>
+                          <h5 className="text-2xl font-serif font-bold text-white mb-4">Upcoming Live</h5>
+                          <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-white/30 rounded-full mb-4"></div>
+                          <span className="text-[10px] items-center gap-2 text-white/60 uppercase tracking-widest flex group-hover:opacity-100 opacity-0 transition-opacity font-bold">
+                            View Poster <ArrowRight size={12} />
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="h-full w-full p-8 md:p-10 flex flex-col justify-center items-center text-center bg-teal-50/20">
+                        <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm bg-white border border-teal-900/5">
+                          <HandHeart style={{ color: '#00475b' }} size={32} />
+                        </div>
+                        <h4 className="text-xs uppercase tracking-[0.2em] font-bold mb-3 text-[#00475b]/40">Engage</h4>
+                        <p className="text-sm mb-8 leading-relaxed text-[#00475b]/60 font-medium">
+                          Be part of our mission to create positive change through the power of Carnatic fusion.
+                        </p>
+                        <motion.button 
+                          whileHover={{ y: -3, scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="w-full font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
+                          style={{ backgroundColor: '#00475b', color: '#F4F8F9' }}
+                        >
+                          Learn More <ArrowRight size={18} />
+                        </motion.button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </AnimatedSection>
-            ))}
+            ))
+          )}
+            {!loading && upcomingEvents.length === 0 && (
+              <div className="text-center py-12 bg-white rounded-2xl border border-teal-900/5 opacity-50 italic">
+                No upcoming events scheduled at this time.
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -204,18 +231,28 @@ const Events = () => {
           </AnimatedSection>
 
           <div className="grid gap-8">
-            {pastEvents.map((event, index) => (
+            {loading ? (
+              <div className="flex flex-col items-center py-20 bg-white rounded-2xl border border-teal-900/5 shadow-sm">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  className="w-10 h-10 border-4 border-teal-900/10 border-t-[#00475b] rounded-full mb-4"
+                />
+                <p className="text-[#00475b]/40 font-serif italic">Loading our legacy...</p>
+              </div>
+            ) : (
+              pastEvents.map((event, index) => (
               <AnimatedSection key={event.id} delay={index * 0.1}>
                 <div className="rounded-2xl overflow-hidden bg-white shadow-2xl border flex flex-col lg:flex-row" style={{ borderColor: 'rgba(1, 78, 99, 0.05)' }}>
                   {/* Left Content Side */}
-                  <div className="flex-[2] p-8 md:p-10">
+                  <div className="flex-[3] p-8 md:p-10">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                      <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: 'rgba(1, 78, 99, 0.1)', color: '#014e63' }}>
+                      <span className="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-teal-50 text-[#00475b] border border-teal-900/5">
                         {event.initiative}
                       </span>
-                      <div className="flex items-center text-[#014e63] font-medium opacity-80">
-                        <Calendar className="mr-2" size={16} />
-                        <span className="text-sm">{event.date}</span>
+                      <div className="flex items-center text-[#00475b] font-semibold opacity-70">
+                        <Calendar className="mr-2" size={14} />
+                        <span className="text-xs uppercase tracking-wider">{event.date}</span>
                       </div>
                     </div>
                     
@@ -246,7 +283,7 @@ const Events = () => {
                   </div>
                   
                   {/* Right Side (Image or Impact Stats) */}
-                  <div className="flex-1 min-h-[300px] lg:min-h-0 overflow-hidden">
+                  <div className="flex-1 min-h-[300px] lg:max-w-xs lg:min-h-0 overflow-hidden">
                     {event.image ? (
                       <div 
                         className="relative h-full w-full cursor-pointer group"
@@ -281,7 +318,13 @@ const Events = () => {
                   </div>
                 </div>
               </AnimatedSection>
-            ))}
+            ))
+          )}
+            {!loading && pastEvents.length === 0 && (
+              <div className="text-center py-12 bg-white rounded-2xl border border-teal-900/5 opacity-50 italic">
+                No past events recorded yet.
+              </div>
+            )}
           </div>
         </div>
       </section>
