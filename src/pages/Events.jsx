@@ -167,11 +167,14 @@ const Events = () => {
       <section className="section-padding" style={{ backgroundColor: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold" style={{ color: '#014e63' }}>
+            <div className="mb-16">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="h-[2px] w-8 bg-[#014e63]/30"></div>
+                <span className="uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold text-[#014e63]/60">Stay Updated</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#014e63]">
                 Upcoming <span className="gradient-text">Events</span>
               </h2>
-              <Calendar style={{ color: '#014e63' }} size={48} />
             </div>
           </AnimatedSection>
 
@@ -249,14 +252,17 @@ const Events = () => {
       </section>
 
       {/* Past Events Archive */}
-      <section className="section-padding" style={{ backgroundColor: 'rgba(1, 78, 99, 0.05)' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F4F8F9' }}>
         <div className="container-max">
           <AnimatedSection>
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold" style={{ color: '#014e63' }}>
+            <div className="mb-16">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="h-[2px] w-8 bg-[#014e63]/30"></div>
+                <span className="uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold text-[#014e63]/60">Our Legacy</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#014e63]">
                 Past <span className="gradient-text">Events</span>
               </h2>
-              <Calendar style={{ color: '#014e63' }} size={48} />
             </div>
           </AnimatedSection>
 
@@ -343,120 +349,9 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Event Types */}
-      <section className="section-padding" style={{ backgroundColor: '#F4F8F9' }}>
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4" style={{ color: '#014e63' }}>
-                Types of <span className="gradient-text">Events</span>
-              </h2>
-              <p className="text-xl" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                Different ways we create impact through music
-              </p>
-            </div>
-          </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedSection delay={0.2}>
-              <div className="rounded-2xl p-10 text-center bg-white shadow-2xl border" style={{ borderColor: 'rgba(1, 78, 99, 0.05)' }}>
-                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm transition-transform duration-300 hover:scale-110" style={{ backgroundColor: 'rgba(1, 78, 99, 0.05)' }}>
-                  <Heart style={{ color: '#014e63' }} size={32} />
-                </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 text-[#014e63]">Fundraising Concerts</h3>
-                <p className="mb-8 leading-relaxed opacity-70 text-[#014e63]">
-                  Harmony for Hope series supporting youth healthcare and educational initiatives 
-                  through ticketed performances.
-                </p>
-                <div className="rounded-xl p-5 bg-[#F4F8F9] border border-[#014e63]/5">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#014e63]/40 mb-1">Recent Impact</p>
-                  <p className="text-xl font-bold text-[#014e63]">$15,000+ raised</p>
-                </div>
-              </div>
-            </AnimatedSection>
 
-            <AnimatedSection delay={0.4}>
-              <div className="rounded-2xl p-10 text-center bg-white shadow-2xl border" style={{ borderColor: 'rgba(1, 78, 99, 0.05)' }}>
-                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm transition-transform duration-300 hover:scale-110" style={{ backgroundColor: 'rgba(1, 78, 99, 0.05)' }}>
-                  <Users style={{ color: '#014e63' }} size={32} />
-                </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 text-[#014e63]">Community Outreach</h3>
-                <p className="mb-8 leading-relaxed opacity-70 text-[#014e63]">
-                  Together Through Music program bringing live performances to senior centers 
-                  and community spaces.
-                </p>
-                <div className="rounded-xl p-5 bg-[#F4F8F9] border border-[#014e63]/5">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#014e63]/40 mb-1">Recent Impact</p>
-                  <p className="text-xl font-bold text-[#014e63]">300+ seniors reached</p>
-                </div>
-              </div>
-            </AnimatedSection>
 
-            <AnimatedSection delay={0.6}>
-              <div className="rounded-2xl p-10 text-center bg-white shadow-2xl border" style={{ borderColor: 'rgba(1, 78, 99, 0.05)' }}>
-                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm transition-transform duration-300 hover:scale-110" style={{ backgroundColor: 'rgba(1, 78, 99, 0.05)' }}>
-                  <Calendar style={{ color: '#014e63' }} size={32} />
-                </div>
-                <h3 className="text-2xl font-serif font-bold mb-4 text-[#014e63]">Cultural Festivals</h3>
-                <p className="mb-8 leading-relaxed opacity-70 text-[#014e63]">
-                  Participating in community festivals to celebrate cultural diversity and 
-                  promote cross-cultural understanding.
-                </p>
-                <div className="rounded-xl p-5 bg-[#F4F8F9] border border-[#014e63]/5">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#014e63]/40 mb-1">Recent Impact</p>
-                  <p className="text-xl font-bold text-[#014e63]">5+ festivals participated</p>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding min-h-[30vh] lg:min-h-[50vh] flex items-center justify-center pt-24 md:pt-32" style={{ background: 'linear-gradient(to right, #014e63, rgba(1, 78, 99, 0.9))', color: '#F4F8F9' }}>
-        <div className="container-max text-center">
-          <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Get in Touch with Dhwayam
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(244, 248, 249, 0.9)' }}>
-              Bring the power of music and social impact to your next event. All performance 
-              remuneration is donated to youth welfare charities.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-              <a 
-                href="/contact" 
-                className="font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg"
-                style={{ backgroundColor: '#F4F8F9', color: '#014e63' }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(244, 248, 249, 0.9)'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#F4F8F9'}
-              >
-                Contact Us <ArrowRight className="ml-2" size={20} />
-              </a>
-              <div className="flex gap-4">
-                <a 
-                  href="https://facebook.com/dhwayam.music" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full transition-all hover:bg-white/10"
-                  style={{ color: '#F4F8F9' }}
-                >
-                  <Facebook size={24} />
-                </a>
-                <a 
-                  href="https://instagram.com/dhwayam.music" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full transition-all hover:bg-white/10"
-                  style={{ color: '#F4F8F9' }}
-                >
-                  <Instagram size={24} />
-                </a>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
       {/* Image Lightbox */}
       <AnimatePresence>
         {selectedImage && (
