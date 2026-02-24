@@ -12,7 +12,7 @@ const Footer = () => {
 
       <div className="container-max pt-10 md:pt-12 pb-8 px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
-          
+
           {/* Brand Identity Column */}
           <div className="lg:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
             <Link to="/" className="inline-flex items-center gap-4 mb-8 group">
@@ -23,9 +23,9 @@ const Footer = () => {
                 loading="lazy"
               />
               <div className="flex flex-col relative justify-center items-center">
-                <span 
+                <span
                   className="alex-brush-regular tracking-wide leading-none relative z-10"
-                  style={{ 
+                  style={{
                     fontSize: 'clamp(2.5rem, 8vw, 4rem)',
                     color: '#F4F8F9',
                     paddingBottom: '0.2rem',
@@ -33,10 +33,10 @@ const Footer = () => {
                 >
                   <span style={{ fontSize: '1.25em', verticalAlign: '-0.1em' }}>D</span>hwayam
                 </span>
-                
+
                 {/* Swash Underline */}
-                <svg 
-                  viewBox="0 0 300 30" 
+                <svg
+                  viewBox="0 0 300 30"
                   className="w-full -mt-6 md:-mt-10 ml-4 md:ml-7 transform -rotate-2"
                   style={{ height: 'clamp(8px, 2vw, 14px)', color: '#F4F8F9' }}
                 >
@@ -47,12 +47,8 @@ const Footer = () => {
                 </span>
               </div>
             </Link>
-            
-            <p className="text-base md:text-lg leading-relaxed mb-4 opacity-90 max-w-lg">
-              Seattle's premium Carnatic fusion ensemble. We bridge musical tradition 
-              with humanitarian purpose through fundraising concerts and impactful 
-              community outreach.
-            </p>
+
+
           </div>
 
           {/* Navigation Links Column */}
@@ -62,7 +58,7 @@ const Footer = () => {
               <ul className="space-y-4 font-medium">
                 {['About Us', 'Initiatives', 'Events', 'Contact'].map((item) => (
                   <li key={item}>
-                    <Link 
+                    <Link
                       to={`/${item.toLowerCase().replace(' ', '')}`}
                       className="opacity-70 hover:opacity-100 hover:translate-x-1 transition-all inline-block"
                     >
@@ -77,7 +73,7 @@ const Footer = () => {
               <ul className="space-y-4 font-medium">
                 {['Youth Welfare', 'Art Therapy', 'Senior Care'].map((item) => (
                   <li key={item}>
-                    <Link 
+                    <Link
                       to="/initiatives"
                       className="opacity-70 hover:opacity-100 hover:translate-x-1 transition-all inline-block"
                     >
@@ -90,16 +86,16 @@ const Footer = () => {
           </div>
 
           {/* Contact & Social Column */}
-            <div className="lg:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="lg:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="text-base md:text-lg font-bold mb-6 tracking-wider uppercase text-white/40">Connect</h4>
             <p className="text-sm opacity-80 mb-6 max-w-xs transition-all">Join our journey and stay updated with our latest stories.</p>
-            
+
             <div className="flex flex-col gap-8 w-full items-center md:items-start">
               {/* Social Icons Row */}
               <div className="flex items-center gap-6">
-                <motion.a 
-                  href="https://www.facebook.com/dhwayam.music/" 
-                  target="_blank" 
+                <motion.a
+                  href="https://www.facebook.com/profile.php?id=61587706409032"
+                  target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.15, translateY: -3 }}
                   className="transition-all duration-300 opacity-80 hover:opacity-100"
@@ -109,9 +105,9 @@ const Footer = () => {
                   <Facebook size={28} />
                 </motion.a>
 
-                <motion.a 
-                  href="https://www.instagram.com/dhwayam.music/" 
-                  target="_blank" 
+                <motion.a
+                  href="https://www.instagram.com/dhwayam/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.15, translateY: -3 }}
                   className="transition-all duration-300 opacity-80 hover:opacity-100"
@@ -121,7 +117,7 @@ const Footer = () => {
                   <Instagram size={28} />
                 </motion.a>
 
-                <motion.a 
+                <motion.a
                   href="mailto:dhwayamband@gmail.com"
                   whileHover={{ scale: 1.15, translateY: -3 }}
                   className="transition-all duration-300 opacity-80 hover:opacity-100"
@@ -131,7 +127,7 @@ const Footer = () => {
                   <Mail size={28} />
                 </motion.a>
               </div>
-              
+
               {/* Let's Talk Section */}
               <div className="md:border-l border-white/10 md:pl-6 text-center md:text-left">
                 <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-1">Let's Talk</p>

@@ -16,7 +16,7 @@ const Initiatives = () => {
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-teal-100/30 rounded-full blur-3xl opacity-60 -mr-20 -mt-20 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-sky-100/20 rounded-full blur-3xl opacity-40 -ml-20 -mb-20 pointer-events-none"></div>
-        
+
         <div className="container-max relative z-10">
           <AnimatedSection>
             <div className="flex flex-col items-center justify-center text-center">
@@ -31,7 +31,7 @@ const Initiatives = () => {
                   <span className="text-[10px] md:text-xs uppercase tracking-[1em] text-[#00475b]/40 font-bold mb-6 ml-[1em]">
                     The Journey of
                   </span>
-                  
+
                   <h1 className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
                     <span className="text-6xl md:text-9xl font-serif font-light text-[#00475b]/30 tracking-tighter">
                       Our
@@ -41,7 +41,7 @@ const Initiatives = () => {
                     </span>
                   </h1>
 
-                  <motion.div 
+                  <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: '60px' }}
                     transition={{ delay: 1, duration: 1 }}
@@ -64,7 +64,7 @@ const Initiatives = () => {
                 Social Impact & <span className="gradient-text">Youth Welfare</span>
               </h2>
               <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                At the heart of everything we do is a commitment to improving the lives of young people 
+                At the heart of everything we do is a commitment to improving the lives of young people
                 and strengthening communities through the transformative power of music.
               </p>
             </div>
@@ -78,7 +78,7 @@ const Initiatives = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-2" style={{ color: '#014e63' }}>Healthcare Access</h3>
                     <p style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                      Providing critical healthcare support and medical equipment to children 
+                      Providing critical healthcare support and medical equipment to children
                       and youth who need it most, ensuring no young person is left behind.
                     </p>
                   </div>
@@ -88,7 +88,7 @@ const Initiatives = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-2" style={{ color: '#014e63' }}>Community Connection</h3>
                     <p style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                      Building bridges between generations and cultures through shared musical 
+                      Building bridges between generations and cultures through shared musical
                       experiences that foster understanding and unity.
                     </p>
                   </div>
@@ -98,7 +98,7 @@ const Initiatives = () => {
                   <div>
                     <h3 className="text-xl font-semibold mb-2" style={{ color: '#014e63' }}>Educational Support</h3>
                     <p style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                      Supporting educational initiatives and programs that empower young people 
+                      Supporting educational initiatives and programs that empower young people
                       to reach their full potential and create positive change.
                     </p>
                   </div>
@@ -113,13 +113,13 @@ const Initiatives = () => {
                 </h3>
                 <div className="space-y-4">
                   <p style={{ color: 'rgba(1, 78, 99, 0.8)' }}>
-                    We believe in complete transparency about our impact. Every dollar raised 
+                    We believe in complete transparency about our impact. Every dollar raised
                     and every life touched is documented and shared with our community.
                   </p>
                   <div className="rounded-lg p-4 border" style={{ backgroundColor: '#F4F8F9', borderColor: 'rgba(1, 78, 99, 0.3)' }}>
                     <p className="font-semibold mb-2" style={{ color: '#014e63' }}>Our Commitment:</p>
                     <p className="text-sm" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                      100% of performance remuneration is donated to charities supporting 
+                      100% of performance remuneration is donated to charities supporting
                       youth welfare. We cover our own expenses to ensure maximum impact.
                     </p>
                   </div>
@@ -140,14 +140,14 @@ const Initiatives = () => {
                 <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mb-8 shadow-sm">
                   <HandHeart style={{ color: '#00475b' }} size={48} />
                 </div>
-                
+
                 <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-[#00475b]">
                   Harmony for <span className="gradient-text italic">Hope</span>
                 </h2>
-                
+
                 <p className="text-lg mb-10 leading-relaxed text-[#00475b]/70 font-light">
-                  Our flagship fundraising concert series dedicated to supporting youth healthcare 
-                  and health-focused nonprofits. Every performance directly translates into 
+                  Our flagship fundraising concert series dedicated to supporting youth healthcare
+                  and health-focused nonprofits. Every performance directly translates into
                   life-changing support for those who need it most.
                 </p>
 
@@ -160,8 +160,8 @@ const Initiatives = () => {
                       { text: 'Educational Health Programs', icon: '✦' },
                       { text: 'Community Health Awareness', icon: '✦' }
                     ].map((item, idx) => (
-                      <motion.div 
-                        key={idx} 
+                      <motion.div
+                        key={idx}
                         whileHover={{ y: -2 }}
                         className="flex items-center gap-4 p-4 rounded-xl bg-teal-50/30 border border-teal-900/5 hover:bg-teal-50/50 transition-colors group"
                       >
@@ -180,14 +180,14 @@ const Initiatives = () => {
                 <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mb-8 shadow-sm">
                   <Users style={{ color: '#00475b' }} size={48} />
                 </div>
-                
+
                 <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-[#00475b]">
                   Together Through <span className="gradient-text italic">Music</span>
                 </h2>
-                
+
                 <p className="text-lg mb-10 leading-relaxed text-[#00475b]/70 font-light">
-                  Our community outreach program brings the joy and healing power of live music 
-                  directly to senior centers and community spaces, fostering intergenerational 
+                  Our community outreach program brings the joy and healing power of live music
+                  directly to senior centers and community spaces, fostering intergenerational
                   connections and cultural appreciation.
                 </p>
 
@@ -200,21 +200,21 @@ const Initiatives = () => {
                       { text: 'Cultural Education & Storytelling', icon: '✦' },
                       { text: 'Intergenerational Connection', icon: '✦' }
                     ].map((item, idx) => (
-                      <motion.div 
-                        key={idx} 
+                      <motion.div
+                        key={idx}
                         whileHover={{ y: -2 }}
                         className="flex items-center gap-4 p-4 rounded-xl bg-teal-50/30 border border-teal-900/5 hover:bg-teal-50/50 transition-colors group"
                       >
                         <span className="text-[#fbbf24] font-bold group-hover:scale-125 transition-transform">{item.icon}</span>
                         <span className="text-sm font-semibold text-[#00475b]/80 tracking-tight">{item.text}</span>
-                    </motion.div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
               </div>
             </AnimatedSection>
           </div>
-          
+
           {/* Recent Harmony for Hope Events */}
           <AnimatedSection>
             <div className="mt-12">
@@ -228,16 +228,16 @@ const Initiatives = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 {[
                   {
-                    date: 'November 2025',
+                    date: 'November 15, 2025',
                     title: 'Sankara Healthcare Fundraiser',
-                    description: 'A powerful evening of Carnatic fusion music that raised funds to provide prosthetics for 100 children, giving them new hope and mobility.',
-                    impact: '100 Children Helped'
+                    description: 'A powerful evening of Carnatic fusion music raising funds to support Sankara Healthcare and the vital care they provide to those in need.',
+                    impact: '$3,831 Raised · 125 Attendees'
                   },
                   {
-                    date: 'October 2025',
+                    date: 'October 28, 2025',
                     title: 'Microsoft Giving Campaign',
-                    description: 'Partnered with Asha for Education & REDP to support educational initiatives through an intimate concert experience.',
-                    impact: '$4,000 Raised'
+                    description: 'Partnered with Asha for Education & REDP to support educational initiatives through an intimate concert experience at Microsoft.',
+                    impact: '$3,850 Raised · 75 Attendees'
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white rounded-2xl p-8 shadow-xl border border-teal-900/5 hover:-translate-y-1 transition-all duration-300">
@@ -278,10 +278,10 @@ const Initiatives = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: DollarSign, value: 12000, label: 'Funds Raised', suffix: '+' },
-              { icon: Calendar, value: 15, label: 'Concerts Held', suffix: '+' },
-              { icon: Users, value: 200, label: 'Lives Impacted', suffix: '+' },
-              { icon: Target, value: 8, label: 'Partner Organizations', suffix: '' }
+              { icon: DollarSign, value: 7681, label: 'Funds Raised', suffix: '+' },
+              { icon: Calendar, value: 4, label: 'Events Held', suffix: '+' },
+              { icon: Users, value: 245, label: 'Lives Impacted', suffix: '+' },
+              { icon: Target, value: 5, label: 'Partner Organizations', suffix: '+' }
             ].map((stat, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
                 <div className="text-center p-8 rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 group">
@@ -319,11 +319,11 @@ const Initiatives = () => {
                 <HandHeart style={{ color: '#014e63' }} className="mx-auto mb-4" size={48} />
                 <h3 className="text-xl font-semibold mb-4" style={{ color: '#014e63' }}>Attend Our Concerts</h3>
                 <p className="mb-6" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
-                  Join us at our Harmony for Hope fundraising concerts and be part of 
+                  Join us at our Harmony for Hope fundraising concerts and be part of
                   the change while enjoying beautiful music.
                 </p>
-                <a 
-                  href="/events" 
+                <a
+                  href="/events"
                   className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
                   style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
                   onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
@@ -341,8 +341,8 @@ const Initiatives = () => {
                 <p className="mb-6" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
                   Get in touch with Dhwayam to learn more about our initiatives and create impact together.
                 </p>
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
                   style={{ backgroundColor: '#014e63', color: '#F4F8F9' }}
                   onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(1, 78, 99, 0.9)'}
@@ -361,8 +361,8 @@ const Initiatives = () => {
                   Stay connected with our journey and latest updates on social media.
                 </p>
                 <div className="flex flex-col gap-3">
-                  <a 
-                    href="https://facebook.com/dhwayam.music" 
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61587706409032"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center justify-center text-sm"
@@ -372,8 +372,8 @@ const Initiatives = () => {
                   >
                     Facebook <Facebook className="ml-2" size={16} />
                   </a>
-                  <a 
-                    href="https://instagram.com/dhwayam.music" 
+                  <a
+                    href="https://www.instagram.com/dhwayam/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center justify-center text-sm"

@@ -38,11 +38,11 @@ const Header = () => {
   const logoHeight = isScrolled ? '70px' : '90px';
 
   return (
-    <header 
+    <header
       className="fixed top-0 w-full z-50 transition-all duration-300 md:hidden"
-      style={{ 
+      style={{
         backgroundColor: headerBackground,
-        backdropFilter: headerBackdrop, 
+        backdropFilter: headerBackdrop,
         boxShadow: headerShadow,
         borderBottom: isTransparent ? 'none' : '1px solid rgba(1, 78, 99, 0.1)'
       }}
@@ -59,9 +59,9 @@ const Header = () => {
               style={{ height: logoHeight }}
             />
             <motion.div className="flex flex-col relative justify-center items-center">
-              <span 
+              <span
                 className="alex-brush-regular tracking-wide transition-all duration-300 leading-none relative z-10"
-                style={{ 
+                style={{
                   fontSize: isScrolled ? '3.5rem' : '4rem',
                   color: textColor,
                   // Use solid color always for consistent design
@@ -74,27 +74,27 @@ const Header = () => {
               >
                 <span style={{ fontSize: '1.25em', verticalAlign: '-0.1em' }}>D</span>hwayam
               </span>
-              
+
               {/* Decorative Swash Underline - Arc Shape */}
-              <svg 
-                viewBox="0 0 300 30" 
+              <svg
+                viewBox="0 0 300 30"
                 className="w-full -mt-10 ml-7 transition-all duration-300 transform -rotate-2"
-                style={{ 
+                style={{
                   height: isScrolled ? '12px' : '15px',
                   color: textColor,
                 }}
               >
-                <path 
-                  d="M20,25 Q150,15 280,25" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth={3.5} 
+                <path
+                  d="M20,25 Q150,15 280,25"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={3.5}
                   strokeLinecap="round"
                 />
               </svg>
-              <span 
+              <span
                 className={`font-semibold tracking-[0.3em] uppercase transition-all duration-300 ${isScrolled ? 'text-[7px]' : 'text-[9px]'}`}
-                style={{ 
+                style={{
                   color: isTransparent ? 'rgba(244, 248, 249, 0.8)' : '#000000',
                   opacity: 1,
                   height: 'auto',
@@ -113,9 +113,9 @@ const Header = () => {
                 key={item.name}
                 to={item.path}
                 className="relative text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:opacity-80 group py-2"
-                style={{ 
-                   color: isActive(item.path) ? (isTransparent ? '#ffffff' : '#014e63') 
-                          : (isTransparent ? 'rgba(255, 255, 255, 0.8)' : 'rgba(1, 78, 99, 0.6)')
+                style={{
+                  color: isActive(item.path) ? (isTransparent ? '#ffffff' : '#014e63')
+                    : (isTransparent ? 'rgba(255, 255, 255, 0.8)' : 'rgba(1, 78, 99, 0.6)')
                 }}
               >
                 {item.name}
@@ -128,19 +128,19 @@ const Header = () => {
                 )}
                 {/* Hover Dot */}
                 {!isActive(item.path) && (
-                   <div 
+                  <div
                     className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-0 group-hover:scale-100"
                     style={{ backgroundColor: isTransparent ? '#ffffff' : '#014e63' }}
-                   />
+                  />
                 )}
               </Link>
             ))}
 
             {/* Contact CTA Button - Modern Pill */}
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="px-8 py-3 rounded-full font-bold text-[12px] tracking-[0.15em] uppercase transition-all duration-300 transform hover:scale-105 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] outline-none"
-              style={{ 
+              style={{
                 backgroundColor: isTransparent ? '#F4F8F9' : '#014e63',
                 color: isTransparent ? '#014e63' : '#F4F8F9',
                 border: '1px solid transparent'
@@ -154,7 +154,7 @@ const Header = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-3 transition-colors rounded-full"
-            style={{ 
+            style={{
               color: textColor,
               backgroundColor: isTransparent ? 'rgba(255,255,255,0.1)' : 'rgba(1,78,99,0.05)'
             }}
@@ -179,7 +179,7 @@ const Header = () => {
                     to={item.path}
                     onClick={() => setIsMenuOpen(false)}
                     className="block py-4 px-6 rounded-xl transition-all text-sm font-bold tracking-widest uppercase"
-                    style={{ 
+                    style={{
                       backgroundColor: isActive(item.path) ? 'rgba(1, 78, 99, 0.1)' : 'transparent',
                       color: isActive(item.path) ? '#014e63' : 'rgba(1, 78, 99, 0.8)',
                     }}
@@ -188,7 +188,7 @@ const Header = () => {
                   </Link>
                 ))}
                 <div className="pt-6 border-t border-gray-100">
-                  <Link 
+                  <Link
                     to="/contact"
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full py-4 text-center rounded-xl font-bold text-sm tracking-widest uppercase transition-transform active:scale-95"
