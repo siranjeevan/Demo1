@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Home, Info, Target, Music, Phone, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import logoImage from '../assets/logo_optimized.png';
+import textImage from '../assets/Text.png';
 
 const Sidebar = () => {
   const location = useLocation();
