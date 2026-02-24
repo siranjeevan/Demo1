@@ -44,7 +44,7 @@ const Home = () => {
       className=""
     >
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Images */}
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom right, rgba(1, 78, 99, 0.7), rgba(1, 78, 99, 0.6), rgba(1, 78, 99, 0.5))' }}></div>
@@ -161,47 +161,56 @@ const Home = () => {
           </motion.div>
         </div>
         
-        {/* Scroll Indicator — Premium Chevron Cascade */}
+        {/* Scroll Indicator — Orbital Pulse Ring */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer group"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 2, duration: 1, ease: 'backOut' }}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer group"
           onClick={() => window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
         >
-          {/* Glowing vertical line */}
-          <motion.div 
-            animate={{ height: ['0px', '40px', '0px'] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-[1px] bg-gradient-to-b from-transparent via-white/60 to-transparent mb-3"
-          />
-          
-          {/* Staggered chevrons */}
-          <div className="flex flex-col items-center gap-[2px]">
-            {[0, 1, 2].map((i) => (
-              <motion.svg
-                key={i}
-                width="16" height="8" viewBox="0 0 16 8"
-                animate={{ 
-                  y: [0, 4, 0], 
-                  opacity: [0.2, 0.8, 0.2] 
-                }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity, 
-                  ease: 'easeInOut',
-                  delay: i * 0.15 
-                }}
-              >
-                <path d="M1 1L8 7L15 1" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-              </motion.svg>
-            ))}
+          {/* Outer ripple rings */}
+          <div className="relative w-14 h-14 flex items-center justify-center">
+            <motion.div
+              animate={{ scale: [1, 2.2], opacity: [0.3, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
+              className="absolute w-full h-full rounded-full border border-white/30"
+            />
+            <motion.div
+              animate={{ scale: [1, 2.2], opacity: [0.3, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeOut', delay: 0.7 }}
+              className="absolute w-full h-full rounded-full border border-white/20"
+            />
+
+            {/* Rotating orbit path */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+              className="absolute w-full h-full"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+            </motion.div>
+
+            {/* Center icon — down arrow */}
+            <motion.svg
+              animate={{ y: [0, 3, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              width="14" height="14" viewBox="0 0 24 24" fill="none"
+              className="relative z-10"
+            >
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </motion.svg>
           </div>
 
-          {/* Label */}
-          <span className="mt-3 text-white/40 text-[9px] uppercase tracking-[0.4em] font-semibold group-hover:text-white/70 transition-colors duration-500">
-            Discover More
-          </span>
+          {/* Label with hover glow */}
+          <motion.span 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3 }}
+            className="mt-4 text-white/30 text-[9px] uppercase tracking-[0.5em] font-semibold group-hover:text-white/80 group-hover:tracking-[0.6em] transition-all duration-700"
+          >
+            Explore
+          </motion.span>
         </motion.div>
       </section>
 
@@ -366,10 +375,15 @@ const Home = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-16 max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6" style={{ color: '#014e63' }}>
-              What People <span className="gradient-text">Say</span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="h-[2px] w-8 bg-[#00475b]/30"></div>
+              <span className="uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold text-[#00475b]/60">Testimonials</span>
+              <div className="h-[2px] w-8 bg-[#00475b]/30"></div>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-[#00475b]">
+              What People <span className="gradient-text italic">Say</span>
             </h2>
-            <p className="text-xl leading-relaxed" style={{ color: 'rgba(1, 78, 99, 0.7)' }}>
+            <p className="text-lg leading-relaxed text-[#00475b]/60 font-light">
               Voices from our community and partners who have experienced the transformative power of Carnatic fusion.
             </p>
           </motion.div>
@@ -388,17 +402,17 @@ const Home = () => {
                   <div
                     key={testimonial.id}
                     onMouseEnter={() => setActiveTestimonial(index)}
-                    className="relative rounded-3xl cursor-pointer overflow-hidden transition-all duration-700 shadow-xl border border-transparent"
+                    className="relative rounded-3xl cursor-pointer overflow-hidden transition-all duration-700 shadow-xl"
                     style={{ 
                       flex: isActive ? 3.5 : 1,
-                      backgroundColor: isActive ? '#014e63' : '#FFFFFF',
+                      backgroundColor: isActive ? '#00475b' : '#FFFFFF',
                       transition: 'all 0.8s cubic-bezier(0.2, 1, 0.2, 1)',
-                      borderColor: isActive ? '#014e63' : 'rgba(1, 78, 99, 0.1)'
+                      border: isActive ? '1px solid #00475b' : '1px solid rgba(0, 71, 91, 0.08)'
                     }}
                   >
                     {/* Background Quote Icon Overlay */}
-                    <div className="absolute -bottom-10 -right-10 opacity-5">
-                      <Heart size={isActive ? 200 : 100} color={isActive ? "#F4F8F9" : "#014e63"} />
+                    <div className="absolute -bottom-10 -right-10 opacity-[0.03]">
+                      <Heart size={isActive ? 200 : 100} color={isActive ? "#F4F8F9" : "#00475b"} />
                     </div>
 
                     <div className="h-full flex flex-col p-8 md:p-10 z-10 relative">
@@ -410,10 +424,11 @@ const Home = () => {
                         }}
                       >
                         <div 
-                          className="w-12 h-12 rounded-full flex items-center justify-center text-2xl font-serif transition-colors duration-500"
+                          className="w-10 h-10 rounded-2xl flex items-center justify-center text-xl font-serif transition-all duration-500"
                           style={{ 
-                            backgroundColor: isActive ? 'rgba(244, 248, 249, 0.2)' : 'rgba(1, 78, 99, 0.1)',
-                            color: isActive ? '#F4F8F9' : '#014e63' 
+                            backgroundColor: isActive ? 'rgba(244, 248, 249, 0.15)' : 'rgba(0, 71, 91, 0.06)',
+                            color: isActive ? '#F4F8F9' : '#00475b',
+                            border: isActive ? '1px solid rgba(244, 248, 249, 0.1)' : '1px solid rgba(0, 71, 91, 0.08)'
                           }}
                         >
                           "
@@ -431,7 +446,7 @@ const Home = () => {
                               transitionDelay: isActive ? '0.3s' : '0s'
                             }}
                           >
-                            <p className="text-lg md:text-xl italic mb-8 font-serif leading-relaxed" style={{ color: '#F4F8F9' }}>
+                            <p className="text-lg md:text-xl italic mb-8 font-serif leading-relaxed text-white/90">
                               "{testimonial.quote}"
                             </p>
                           </div>
@@ -440,23 +455,24 @@ const Home = () => {
                         {/* Author Info */}
                         <div className="flex items-center">
                           <div 
-                            className="w-14 h-14 rounded-2xl overflow-hidden shadow-md transition-all duration-500"
+                            className="w-12 h-12 rounded-xl overflow-hidden transition-all duration-500"
                             style={{ 
-                              transform: isActive ? 'scale(1.05)' : 'scale(1)',
-                              border: isActive ? '2px solid rgba(244, 248, 249, 0.3)' : '1px solid rgba(1, 78, 99, 0.1)'
+                              border: isActive ? '2px solid rgba(244, 248, 249, 0.25)' : '1px solid rgba(0, 71, 91, 0.08)',
+                              boxShadow: isActive ? '0 4px 12px rgba(0,0,0,0.2)' : '0 2px 8px rgba(0,0,0,0.06)'
                             }}
                           >
                             <img 
                               src={testimonial.image} 
                               alt={testimonial.author}
                               className="w-full h-full object-cover"
+                              loading="lazy"
                             />
                           </div>
                           <div className={`ml-4 transition-all duration-500 ${isActive ? 'translate-x-0' : 'translate-x-1'}`}>
-                            <p className="font-bold text-lg leading-tight transition-colors duration-500" style={{ color: isActive ? '#F4F8F9' : '#014e63' }}>
+                            <p className="font-bold text-sm leading-tight transition-colors duration-500 tracking-tight" style={{ color: isActive ? '#F4F8F9' : '#00475b' }}>
                               {testimonial.author}
                             </p>
-                            <p className="text-sm transition-colors duration-500" style={{ color: isActive ? 'rgba(244, 248, 249, 0.7)' : 'rgba(1, 78, 99, 0.5)' }}>
+                            <p className="text-xs transition-colors duration-500 mt-0.5 font-medium" style={{ color: isActive ? 'rgba(244, 248, 249, 0.5)' : 'rgba(0, 71, 91, 0.4)' }}>
                               {testimonial.role}
                             </p>
                           </div>

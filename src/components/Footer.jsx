@@ -20,6 +20,7 @@ const Footer = () => {
                 src={logoImage}
                 alt="Dhwayam Logo"
                 className="h-16 md:h-20 w-auto transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="flex flex-col relative justify-center items-center">
                 <span 

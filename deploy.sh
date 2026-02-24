@@ -10,4 +10,4 @@ echo "Deploying to Firebase Hosting..."
 firebase deploy --only hosting
 
 echo "Deployment complete! Your website is live at:"
-echo "https://dhwayam-3a777.web.app"
+echo "https://dhwayam.com/"
