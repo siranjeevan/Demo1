@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Instagram, Mail, ArrowRight, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
 import logoImage from '../../assets/images/logo_optimized.png';
+import textImage from '../../assets/images/Text1.png';
 
 const Footer = () => {
   return (
@@ -15,37 +16,19 @@ const Footer = () => {
 
           {/* Brand Identity Column */}
           <div className="lg:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
-            <Link to="/" className="inline-flex items-center gap-4 mb-8 group">
+            <Link to="/" className="flex flex-col items-center gap-4 mb-8 group pl-10 md:pl-36">
               <img
                 src={logoImage}
                 alt="Dhwayam Logo"
-                className="h-16 md:h-20 w-auto transition-transform duration-500 group-hover:scale-105"
+                className="h-28 md:h-32 w-auto transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="flex flex-col relative justify-center items-center">
-                <span
-                  className="alex-brush-regular tracking-wide leading-none relative z-10"
-                  style={{
-                    fontSize: 'clamp(2.5rem, 8vw, 4rem)',
-                    color: '#F4F8F9',
-                    paddingBottom: '0.2rem',
-                  }}
-                >
-                  <span style={{ fontSize: '1.25em', verticalAlign: '-0.1em' }}>D</span>hwayam
-                </span>
-
-                {/* Swash Underline */}
-                <svg
-                  viewBox="0 0 300 30"
-                  className="w-full -mt-6 md:-mt-10 ml-4 md:ml-7 transform -rotate-2"
-                  style={{ height: 'clamp(8px, 2vw, 14px)', color: '#F4F8F9' }}
-                >
-                  <path d="M20,25 Q150,15 280,25" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" />
-                </svg>
-                <span className="font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase text-[7px] md:text-[9px] opacity-80 mt-1">
-                  Where Traditions Converge
-                </span>
-              </div>
+              <img
+                src={textImage}
+                alt="Dhwayam Text"
+                className="w-60 md:w-72 h-auto opacity-90 group-hover:opacity-100 transition-opacity"
+                loading="lazy"
+              />
             </Link>
 
 

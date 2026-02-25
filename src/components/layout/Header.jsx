@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import logoImage from '../../assets/images/logo_optimized.png';
+import textImage from '../../assets/images/Text1.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,52 +59,15 @@ const Header = () => {
               className="w-auto drop-shadow-md transition-all duration-300"
               style={{ height: logoHeight }}
             />
-            <motion.div className="flex flex-col relative justify-center items-center">
-              <span
-                className="alex-brush-regular tracking-wide transition-all duration-300 leading-none relative z-10"
-                style={{
-                  fontSize: isScrolled ? '3.5rem' : '4rem',
-                  color: textColor,
-                  // Use solid color always for consistent design
-                  background: 'none',
-                  WebkitBackgroundClip: 'none',
-                  WebkitTextFillColor: 'currentColor',
-                  paddingBottom: '0.2rem',
-                  textShadow: isTransparent ? '0 2px 4px rgba(0,0,0,0.1)' : 'none'
-                }}
-              >
-                <span style={{ fontSize: '1.25em', verticalAlign: '-0.1em' }}>D</span>hwayam
-              </span>
-
-              {/* Decorative Swash Underline - Arc Shape */}
-              <svg
-                viewBox="0 0 300 30"
-                className="w-full -mt-10 ml-7 transition-all duration-300 transform -rotate-2"
-                style={{
-                  height: isScrolled ? '12px' : '15px',
-                  color: textColor,
-                }}
-              >
-                <path
-                  d="M20,25 Q150,15 280,25"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={3.5}
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span
-                className={`font-semibold tracking-[0.3em] uppercase transition-all duration-300 ${isScrolled ? 'text-[7px]' : 'text-[9px]'}`}
-                style={{
-                  color: isTransparent ? 'rgba(244, 248, 249, 0.8)' : '#000000',
-                  opacity: 1,
-                  height: 'auto',
-                  marginTop: isScrolled ? '0.5rem' : '1rem'
-                }}
-              >
-                Where Traditions Converge
-              </span>
-            </motion.div>
+            <img
+              src={textImage}
+              alt="Dhwayam Text"
+              className="h-auto transition-all duration-300"
+              style={{
+                width: isScrolled ? '10rem' : '12rem',
+                filter: isTransparent ? 'brightness(10)' : 'none',
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation - Modern Uppercase Redesign */}
