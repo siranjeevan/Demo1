@@ -30,49 +30,14 @@ const Sidebar = () => {
             src={logoImage}
             alt="Dhwayam Logo"
             className="w-auto drop-shadow-md transition-all duration-300"
-            style={{ height: '100px' }}
+            style={{ height: '140px' }}
           />
-          <motion.div className="flex flex-col relative justify-center items-center">
-            <span
-              className="alex-brush-regular tracking-wide transition-all duration-300 leading-none relative z-10"
-              style={{
-                fontSize: '3.5rem',
-                color: '#00475b',
-                paddingBottom: '0.2rem',
-              }}
-            >
-              <span style={{ fontSize: '1.25em', verticalAlign: '-0.1em' }}>D</span>hwayam
-            </span>
-
-            {/* Decorative Swash Underline - Arc Shape */}
-            <svg
-              viewBox="0 0 300 30"
-              className="w-full -mt-10 ml-7 transition-all duration-300 transform -rotate-2"
-              style={{
-                height: '12px',
-                color: '#fbbf24',
-              }}
-            >
-              <path
-                d="M20,25 Q150,15 280,25"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={3.5}
-                strokeLinecap="round"
-              />
-            </svg>
-            <span
-              className="font-semibold tracking-[0.3em] uppercase transition-all duration-300 text-[7px]"
-              style={{
-                color: 'rgba(1, 78, 99, 0.8)',
-                opacity: 1,
-                height: 'auto',
-                marginTop: '0.5rem'
-              }}
-            >
-              Where Traditions Converge
-            </span>
-          </motion.div>
+          <motion.img
+            src={textImage}
+            alt="Dhwayam Text"
+            className="w-56 h-auto drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity"
+            loading="eager"
+          />
         </Link>
       </div>
 
