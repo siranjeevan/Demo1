@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, MapPin, Users, HandHeart, ArrowRight, Clock, Tag, Facebook, Instagram, X } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedSection';
-import microsoftEventImage from '../assets/image.png';
-import eventsHeroBg from '../assets/events-hero-bg.png';
+import AnimatedSection from '../components/common/AnimatedSection';
+import microsoftEventImage from '../assets/images/image.png';
+import eventsHeroBg from '../assets/images/events-hero-bg.png';
 
 const Events = () => {
   const [selectedImage, setSelectedImage] = useState(null);

@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, Instagram, Facebook } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import AnimatedSection from '../components/AnimatedSection';
+import AnimatedSection from '../components/common/AnimatedSection';
 
 const Contact = () => {
   const form = useRef();

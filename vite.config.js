@@ -4,8 +4,8 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Use the subdirectory for GitHub Pages, otherwise use root for Vercel
-  base: './', // Use relative path to support both GitHub Pages and Firebase Hosting
+  // Ensure base path is set correctly for Firebase Hosting
+  base: './', 
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

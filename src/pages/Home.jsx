@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { ArrowRight, Heart, Users, Calendar } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedSection';
-import CountUp from '../components/CountUp';
-import heroImage1 from '../assets/Hero1_optimized.jpg';
-import testimonial1 from '../assets/testimonial1.png';
-import testimonial2 from '../assets/testimonial2.png';
-import testimonial3 from '../assets/testimonial3.png';
+import AnimatedSection from '../components/common/AnimatedSection';
+import CountUp from '../components/common/CountUp';
+import heroImage1 from '../assets/images/Hero1_optimized.jpg';
+import testimonial1 from '../assets/images/testimonial1.png';
+import testimonial2 from '../assets/images/testimonial2.png';
+import testimonial3 from '../assets/images/testimonial3.png';
 
 const Home = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(1);

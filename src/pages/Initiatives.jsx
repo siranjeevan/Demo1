@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { HandHeart, Users, ArrowRight, Calendar, MapPin, Target, DollarSign, Share2, Instagram, Facebook } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedSection';
-import CountUp from '../components/CountUp';
+import AnimatedSection from '../components/common/AnimatedSection';
+import CountUp from '../components/common/CountUp';
 
 const Initiatives = () => {
   return (
