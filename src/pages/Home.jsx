@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Users, Calendar, ChevronDown } from 'lucide-react';
+import { ArrowRight, Heart, Users, Calendar, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedSection from '../components/common/AnimatedSection';
 import CountUp from '../components/common/CountUp';
 import { db } from '../config/firebase';
@@ -13,6 +13,7 @@ import testimonial3 from '../assets/images/testimonial3.png';
 
 const Home = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(1);
+  const [startIndex, setStartIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [recentImpact, setRecentImpact] = useState([]);
@@ -24,7 +25,16 @@ const Home = () => {
         // Fetch Testimonials
         const testimonialsQuery = query(collection(db, 'testimonials'), orderBy('id', 'asc'));
         const testimonialsSnapshot = await getDocs(testimonialsQuery);
-        const testimonialsList = testimonialsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const testimonialsList = testimonialsSnapshot.docs.map(doc => {
+          const data = doc.data();
+          return {
+            id: data.id || doc.id,
+            author: data.name || data.author || "Unknown",
+            role: data.profession || data.role || "",
+            quote: data.description || data.quote || "",
+            image: data.image || ""
+          };
+        });
 
         // Fallback to local if empty (optional, but keep for now if db is not populated)
         if (testimonialsList.length > 0) {
@@ -55,15 +65,34 @@ const Home = () => {
           ]);
         }
 
-        // Fetch Recent Impact (Latest 3 past events)
-        const recentQuery = query(collection(db, 'past_events'), orderBy('date', 'desc'), limit(3));
-        const recentSnapshot = await getDocs(recentQuery);
-        setRecentImpact(recentSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+        // Fetch Events from single collection
+        const eventsQuery = query(collection(db, 'events'));
+        const eventsSnapshot = await getDocs(eventsQuery);
+        const allEvents = eventsSnapshot.docs.map(doc => {
+          const data = doc.data();
+          return {
+            id: data.id || doc.id,
+            ...data,
+            impact: data.impact || (data.fundsRaised ? `Raised ${data.fundsRaised}` : ''),
+            title: data.title || '',
+            description: data.description || '',
+            date: data.date || '',
+          };
+        });
 
-        // Fetch Upcoming Events (Latest 2)
-        const upcomingQuery = query(collection(db, 'upcoming_events'), orderBy('date', 'asc'), limit(2));
-        const upcomingSnapshot = await getDocs(upcomingQuery);
-        setUpcomingEvents(upcomingSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+        const sortedPastEvents = allEvents
+          .filter(e => e.status !== 'Upcoming')
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .slice(0, 3);
+          
+        setRecentImpact(sortedPastEvents);
+
+        const sortedUpcomingEvents = allEvents
+          .filter(e => e.status === 'Upcoming')
+          .sort((a, b) => new Date(a.date) - new Date(b.date))
+          .slice(0, 2);
+          
+        setUpcomingEvents(sortedUpcomingEvents);
 
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -467,14 +496,15 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="w-full flex flex-col md:flex-row gap-4 h-[650px] md:h-[450px]"
+            className="w-full flex flex-col md:flex-row gap-4 min-h-[750px] h-[750px] md:min-h-[450px] md:h-[450px]"
           >
-            {testimonials.map((testimonial, index) => {
+            {testimonials.slice(startIndex, startIndex + 3).map((testimonial, index) => {
               const isActive = activeTestimonial === index;
               return (
                 <div
                   key={testimonial.id}
                   onMouseEnter={() => setActiveTestimonial(index)}
+                  onClick={() => setActiveTestimonial(index)}
                   className="relative rounded-3xl cursor-pointer overflow-hidden transition-all duration-700 shadow-xl"
                   style={{
                     flex: isActive ? 3.5 : 1,
@@ -487,9 +517,9 @@ const Home = () => {
                     <Heart size={isActive ? 200 : 100} color={isActive ? "#F4F8F9" : "#00475b"} />
                   </div>
 
-                  <div className="h-full flex flex-col p-8 md:p-10 z-10 relative">
+                  <div className="h-full flex flex-col p-6 md:p-10 z-10 relative">
                     <div
-                      className="mb-8 transition-transform duration-500"
+                      className="mb-4 md:mb-8 transition-transform duration-500"
                       style={{
                         transform: isActive ? 'scale(1.1) rotate(5deg)' : 'scale(1) rotate(0deg)'
                       }}
@@ -507,24 +537,25 @@ const Home = () => {
                     </div>
 
                     <div className="flex flex-col h-full justify-between">
-                      <div>
+                      <div className="flex-1 my-4">
                         <div
-                          className={`transition-all duration-700 overflow-hidden ${isActive ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'}`}
+                          className={`transition-all duration-700 overflow-hidden ${isActive ? 'opacity-100 max-h-60' : 'opacity-100 max-h-32 md:max-h-40'}`}
                           style={{
-                            transform: isActive ? 'translateY(0)' : 'translateY(20px)',
+                            transform: 'translateY(0)',
                             transitionDelay: isActive ? '0.3s' : '0s'
                           }}
                         >
-                          <p className="text-lg md:text-xl italic mb-8 font-serif leading-relaxed text-white/90">
+                          <p className={`italic font-serif leading-relaxed transition-colors duration-500 ${isActive ? 'text-base md:text-xl text-white/90 mb-6 md:mb-8' : 'text-xs md:text-sm line-clamp-4 md:line-clamp-6 text-[#00475b]/60'}`}>
                             "{testimonial.quote}"
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-center">
+                      <div className={`flex transition-all duration-500 w-full flex-row ${isActive ? 'items-center' : 'items-start'}`}>
                         <div
-                          className="w-12 h-12 rounded-xl overflow-hidden transition-all duration-500"
+                          className="w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden transition-all duration-500 shrink-0"
                           style={{
+                            backgroundColor: isActive ? '#00475b' : '#FFFFFF',
                             border: isActive ? '2px solid rgba(244, 248, 249, 0.25)' : '1px solid rgba(0, 71, 91, 0.08)',
                             boxShadow: isActive ? '0 4px 12px rgba(0,0,0,0.2)' : '0 2px 8px rgba(0,0,0,0.06)'
                           }}
@@ -536,11 +567,13 @@ const Home = () => {
                             loading="lazy"
                           />
                         </div>
-                        <div className={`ml-4 transition-all duration-500 ${isActive ? 'translate-x-0' : 'translate-x-1'}`}>
-                          <p className="font-bold text-sm leading-tight transition-colors duration-500 tracking-tight" style={{ color: isActive ? '#F4F8F9' : '#00475b' }}>
-                            {testimonial.author}
-                          </p>
-                          <p className="text-xs transition-colors duration-500 mt-0.5 font-medium" style={{ color: isActive ? 'rgba(244, 248, 249, 0.5)' : 'rgba(0, 71, 91, 0.4)' }}>
+                        <div className={`ml-4 flex flex-col transition-all duration-500 ${isActive ? 'translate-x-0' : 'translate-x-1'}`}>
+                          <div className={`font-bold leading-tight transition-colors duration-500 tracking-tight flex ${isActive ? 'flex-row flex-wrap gap-1 text-sm md:text-base' : 'flex-col text-sm md:text-md'}`} style={{ color: isActive ? '#F4F8F9' : '#00475b' }}>
+                            {testimonial.author.split(' ').map((word, wIdx) => (
+                              <span key={wIdx}>{word}</span>
+                            ))}
+                          </div>
+                          <p className={`text-xs transition-colors duration-500 font-medium ${isActive ? 'mt-0.5' : 'mt-1'}`} style={{ color: isActive ? 'rgba(244, 248, 249, 0.5)' : 'rgba(0, 71, 91, 0.4)' }}>
                             {testimonial.role}
                           </p>
                         </div>
@@ -551,6 +584,41 @@ const Home = () => {
               );
             })}
           </motion.div>
+
+          {/* Testimonial Navigation Arrows */}
+          {testimonials.length > 3 && (
+            <div className="flex justify-center items-center gap-6 mt-10">
+              <button
+                onClick={() => {
+                  if (startIndex > 0) {
+                    setStartIndex(prev => prev - 1);
+                    setActiveTestimonial(1);
+                  }
+                }}
+                disabled={startIndex === 0}
+                className="w-12 h-12 rounded-full border border-[#00475b]/20 flex items-center justify-center transition-all duration-300 disabled:opacity-30 hover:bg-[#00475b] hover:text-[#F4F8F9] text-[#00475b]"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              
+              <div className="text-sm font-semibold tracking-widest text-[#00475b]/60">
+                {startIndex + 1} - {Math.min(startIndex + 3, testimonials.length)} OF {testimonials.length}
+              </div>
+
+              <button
+                onClick={() => {
+                  if (startIndex + 3 < testimonials.length) {
+                    setStartIndex(prev => prev + 1);
+                    setActiveTestimonial(1);
+                  }
+                }}
+                disabled={startIndex + 3 >= testimonials.length}
+                className="w-12 h-12 rounded-full border border-[#00475b]/20 flex items-center justify-center transition-all duration-300 disabled:opacity-30 hover:bg-[#00475b] hover:text-[#F4F8F9] text-[#00475b]"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

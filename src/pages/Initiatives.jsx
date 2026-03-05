@@ -13,15 +13,26 @@ const Initiatives = () => {
   useEffect(() => {
     const fetchRecentEvents = async () => {
       try {
-        // Fetch Recent Harmony for Hope Events (from past_events where initiative contains Harmony for Hope)
+        // Fetch Recent Harmony for Hope Events (from events where initiative contains Harmony for Hope and status is not upcoming)
         const q = query(
-          collection(db, 'past_events'),
-          where('initiative', '==', 'Harmony for Hope'),
-          orderBy('date', 'desc'),
-          limit(2)
+          collection(db, 'events'),
+          where('initiative', '==', 'Harmony for Hope')
         );
         const snapshot = await getDocs(q);
-        const eventsList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const eventsList = snapshot.docs
+          .map(doc => {
+            const data = doc.data();
+            return {
+              id: data.id || doc.id,
+              ...data,
+              image: data.flyers || data.image,
+              partner: data.fundsRaisedTo || data.partner || "Community",
+            };
+          })
+          .filter(e => e.status !== 'Upcoming')
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .slice(0, 2);
+
         setRecentEvents(eventsList);
       } catch (error) {
         console.error('Error fetching recent events:', error);

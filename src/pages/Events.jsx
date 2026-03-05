@@ -16,15 +16,27 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        // Fetch Upcoming Events
-        const upcomingQuery = query(collection(db, 'upcoming_events'), orderBy('date', 'asc'));
-        const upcomingSnapshot = await getDocs(upcomingQuery);
-        const upcomingList = upcomingSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const eventsQuery = query(collection(db, 'events'));
+        const eventsSnapshot = await getDocs(eventsQuery);
+        const allEvents = eventsSnapshot.docs.map(doc => {
+          const data = doc.data();
+          return {
+            id: data.id || doc.id,
+            ...data,
+            image: data.flyers || data.image,
+            partner: data.fundsRaisedTo || data.partner || "Community",
+            ticketInfo: data.numberOfAttendees ? `${data.numberOfAttendees} Attendees` : data.ticketInfo || "Open to all"
+          };
+        });
 
-        // Fetch Past Events
-        const pastQuery = query(collection(db, 'past_events'), orderBy('date', 'desc'));
-        const pastSnapshot = await getDocs(pastQuery);
-        const pastList = pastSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        // Filter by status and sort
+        const upcomingList = allEvents
+          .filter(e => e.status === 'Upcoming')
+          .sort((a, b) => new Date(a.date) - new Date(b.date));
+          
+        const pastList = allEvents
+          .filter(e => e.status !== 'Upcoming') // Assuming 'Past' or 'Completed'
+          .sort((a, b) => new Date(b.date) - new Date(a.date));
 
         setEventsData({
           upcomingEvents: upcomingList,
