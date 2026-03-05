@@ -1,9 +1,37 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HandHeart, Users, ArrowRight, Calendar, MapPin, Target, DollarSign, Share2, Instagram, Facebook } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import CountUp from '../components/CountUp';
+import { db } from '../firebase';
+import { collection, getDocs, orderBy, query, limit, where } from 'firebase/firestore';
 
 const Initiatives = () => {
+  const [recentEvents, setRecentEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchRecentEvents = async () => {
+      try {
+        // Fetch Recent Harmony for Hope Events (from past_events where initiative contains Harmony for Hope)
+        const q = query(
+          collection(db, 'past_events'),
+          where('initiative', '==', 'Harmony for Hope'),
+          orderBy('date', 'desc'),
+          limit(2)
+        );
+        const snapshot = await getDocs(q);
+        const eventsList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setRecentEvents(eventsList);
+      } catch (error) {
+        console.error('Error fetching recent events:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchRecentEvents();
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -226,35 +254,57 @@ const Initiatives = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                {[
-                  {
-                    date: 'November 15, 2025',
-                    title: 'Sankara Healthcare Fundraiser',
-                    description: 'A powerful evening of Carnatic fusion music raising funds to support Sankara Healthcare and the vital care they provide to those in need.',
-                    impact: '$3,831 Raised · 125 Attendees'
-                  },
-                  {
-                    date: 'October 28, 2025',
-                    title: 'Microsoft Giving Campaign',
-                    description: 'Partnered with Asha for Education & REDP to support educational initiatives through an intimate concert experience at Microsoft.',
-                    impact: '$3,850 Raised · 75 Attendees'
-                  }
-                ].map((item, idx) => (
-                  <div key={idx} className="bg-white rounded-2xl p-8 shadow-xl border border-teal-900/5 hover:-translate-y-1 transition-all duration-300">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 rounded-lg bg-teal-50">
-                        <Calendar style={{ color: '#00475b' }} size={16} />
+                {recentEvents.length > 0 ? (
+                  recentEvents.map((item, idx) => (
+                    <div key={item.id} className="bg-white rounded-2xl p-8 shadow-xl border border-teal-900/5 hover:-translate-y-1 transition-all duration-300">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="p-2 rounded-lg bg-teal-50">
+                          <Calendar style={{ color: '#00475b' }} size={16} />
+                        </div>
+                        <span className="text-xs font-bold text-[#00475b]/60 uppercase tracking-widest">{item.date}</span>
                       </div>
-                      <span className="text-xs font-bold text-[#00475b]/60 uppercase tracking-widest">{item.date}</span>
+                      <h4 className="text-2xl font-serif font-bold mb-4 text-[#00475b]">{item.title}</h4>
+                      <p className="text-[#00475b]/70 mb-8 leading-relaxed font-light">{item.description}</p>
+                      <div className="flex items-center justify-between pt-6 border-t border-[#00475b]/5">
+                        <span className="text-xl font-bold text-[#00475b]">{item.fundsRaised || item.impact}</span>
+                        <MapPin style={{ color: '#fbbf24' }} size={18} />
+                      </div>
                     </div>
-                    <h4 className="text-2xl font-serif font-bold mb-4 text-[#00475b]">{item.title}</h4>
-                    <p className="text-[#00475b]/70 mb-8 leading-relaxed font-light">{item.description}</p>
-                    <div className="flex items-center justify-between pt-6 border-t border-[#00475b]/5">
-                      <span className="text-xl font-bold text-[#00475b]">{item.impact}</span>
-                      <MapPin style={{ color: '#fbbf24' }} size={18} />
-                    </div>
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  // Hardcoded Fallbacks
+                  <>
+                    {[
+                      {
+                        date: 'November 15, 2025',
+                        title: 'Sankara Healthcare Fundraiser',
+                        description: 'A powerful evening of Carnatic fusion music raising funds to support Sankara Healthcare and the vital care they provide to those in need.',
+                        impact: '$3,831 Raised · 125 Attendees'
+                      },
+                      {
+                        date: 'October 28, 2025',
+                        title: 'Microsoft Giving Campaign',
+                        description: 'Partnered with Asha for Education & REDP to support educational initiatives through an intimate concert experience at Microsoft.',
+                        impact: '$3,850 Raised · 75 Attendees'
+                      }
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white rounded-2xl p-8 shadow-xl border border-teal-900/5 hover:-translate-y-1 transition-all duration-300">
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className="p-2 rounded-lg bg-teal-50">
+                            <Calendar style={{ color: '#00475b' }} size={16} />
+                          </div>
+                          <span className="text-xs font-bold text-[#00475b]/60 uppercase tracking-widest">{item.date}</span>
+                        </div>
+                        <h4 className="text-2xl font-serif font-bold mb-4 text-[#00475b]">{item.title}</h4>
+                        <p className="text-[#00475b]/70 mb-8 leading-relaxed font-light">{item.description}</p>
+                        <div className="flex items-center justify-between pt-6 border-t border-[#00475b]/5">
+                          <span className="text-xl font-bold text-[#00475b]">{item.impact}</span>
+                          <MapPin style={{ color: '#fbbf24' }} size={18} />
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
             </div>
           </AnimatedSection>
