@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, MapPin, Users, HandHeart, ArrowRight, Clock, Tag, Facebook, Instagram, X } from 'lucide-react';
+<<<<<<< HEAD
 import AnimatedSection from '../components/AnimatedSection';
 import { db } from '../firebase';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import microsoftEventImage from '../assets/image.png';
 import eventsHeroBg from '../assets/events-hero-bg.png';
+=======
+import AnimatedSection from '../components/common/AnimatedSection';
+import microsoftEventImage from '../assets/images/image.png';
+import eventsHeroBg from '../assets/images/events-hero-bg.png';
+>>>>>>> 69390cf648b054c45fa0786498f6c198babc682d
 
 const Events = () => {
   const [selectedImage, setSelectedImage] = useState(null);

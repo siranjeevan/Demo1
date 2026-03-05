@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HandHeart, Users, ArrowRight, Calendar, MapPin, Target, DollarSign, Share2, Instagram, Facebook } from 'lucide-react';
+<<<<<<< HEAD
 import AnimatedSection from '../components/AnimatedSection';
 import CountUp from '../components/CountUp';
 import { db } from '../firebase';
 import { collection, getDocs, orderBy, query, limit, where } from 'firebase/firestore';
+=======
+import AnimatedSection from '../components/common/AnimatedSection';
+import CountUp from '../components/common/CountUp';
+>>>>>>> 69390cf648b054c45fa0786498f6c198babc682d
 
 const Initiatives = () => {
   const [recentEvents, setRecentEvents] = useState([]);

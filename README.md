@@ -196,12 +196,14 @@ src/
 
 ## 🚀 Deployment
 
-The application is ready for deployment to any static hosting service:
+The application is configured for **Firebase Hosting**:
 
-- **Vercel**: Zero-config deployment
-- **Netlify**: Drag-and-drop deployment
-- **GitHub Pages**: Free hosting for public repos
-- **AWS S3**: Scalable cloud hosting
+1.  **Build and Deploy**:
+    ```bash
+    npm run deploy
+    ```
+
+For detailed setup instructions, see [FIREBASE_DEPLOY.md](./FIREBASE_DEPLOY.md).
 
 ## 📄 License
 

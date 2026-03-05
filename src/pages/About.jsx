@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Music, Heart, Users, Award } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedSection';
-import aboutHero from '../assets/AboutHero_optimized.jpg';
+import AnimatedSection from '../components/common/AnimatedSection';
+import aboutHero from '../assets/images/AboutHero_optimized.jpg';
 
 const About = () => {
   return (
